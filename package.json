@@ -1,0 +1,25 @@
+{
+  "name": "routemapp",
+  "version": "1.0.0",
+  "description": "Maya Goldstein | Samantha Ramos | Lin Lassiter | General Assembly WDIr-Gizmo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mayagold/routemapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mayagold/routemapp/issues"
+  },
+  "homepage": "https://github.com/mayagold/routemapp#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "mongoose": "^4.11.7"
+  }
+}
