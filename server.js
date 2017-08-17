@@ -13,6 +13,13 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 
 ////////////////////////////////////////////////
+//    REQUIRE SEED CONTROLLER
+//    (and eventually the route model controller)
+////////////////////////////////////////////////
+var seedController = require('./controllers/seedController');
+app.use('/seed', seedController);
+
+////////////////////////////////////////////////
 //    HELLO WORLD
 ////////////////////////////////////////////////
 
