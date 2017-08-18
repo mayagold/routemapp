@@ -1,0 +1,20 @@
+////////////////////////////////////////////////
+//    SEED CONTROLLER SETUP
+////////////////////////////////////////////////
+
+const express = require('express');
+const router = express.Router();
+
+////////////////////////////////////////////////
+//   SEED DATA
+////////////////////////////////////////////////
+
+
+router.get('/', function(req,res){
+  res.send('seeding database')
+})
+router.get('/dropdatabase', function(req,res){
+  res.send('dropping database')
+})
+
+module.exports = router;
