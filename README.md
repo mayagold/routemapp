@@ -14,7 +14,7 @@ Our app utilizes Google Maps API technology to access both the user's location a
 
 ***************************************************************
 
-MVP:
+## Epic (MVP):
 
 * Full CRUD
 * MongoDB, Angular, Express, Node
@@ -22,24 +22,47 @@ MVP:
 
 ***************************************************************
 
-Features:
+## User Stories:
+* As a user I want to find a trip route near my location so that I can use enjoy a great local route.
+* As a user I want to be able to provide comments on the routes I use.
+* As a user I want to contribute to the available routes on this site.
+* As a user I want to preview a route.
+* As a user I want to rate my favorites ('star').
+* As a user I want to delete my routes and comments.
+* Session sign-on (register/login)
+* As an user I want to control adding and deleting my routes/comments.
+
 
 ***************************************************************
 
-Approach:
+## Work Items:
+* Google API research and understand location discovery and entry.
+* Google API for search available routes near my location (gpx files).
+* Index of available routes with comments per route with expansion ellipses...
+* Allow users to add comments for trips/routes used.
+* Set ranking 'star' of Routes - Favorites.
+* Seed trips/routes into MongoDB.
+* Update of Trip/Route DB by user with comments (PUT).
+* Google API for opening route near location and preview.
+* Wireframe of the site.
+* Styling of the site page(s).
+* Create Session Registration and Login associating user to DB contributions. (DB models (routes&comments - Users/pw))
+
 
 ***************************************************************
 
-Problems we encountered (and how we solved them):
+## Problems we encountered (and how we solved them):
 
 ***************************************************************
 
-Wireframing:
+## Wireframing:
+*
 
 ***************************************************************
 
-Further Goals:
+## Further Goals:
+* Allow users to communicate with each other about their.
 
 ***************************************************************
 
-Any other info 
+## Any other info
