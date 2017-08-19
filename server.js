@@ -16,7 +16,7 @@ app.use(express.static('public'));
 //    REQUIRE SEED CONTROLLER
 //    (and eventually the route model controller)
 ////////////////////////////////////////////////
-var seedController = require('./controllers/seedController');
+var seedController = require('./controllers/seedController.js');
 app.use('/seed', seedController);
 
 ////////////////////////////////////////////////
