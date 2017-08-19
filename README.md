@@ -1,3 +1,5 @@
+[![Stories in Ready](https://badge.waffle.io/mayagold/routemapp.svg?label=ready&title=Ready)](http://waffle.io/mayagold/routemapp)
+
 # routemapp
 Maya Goldstein, Samantha Ramos, Lin Lassiter
 
@@ -23,7 +25,8 @@ Our app utilizes Google Maps API technology to access both the user's location a
 ***************************************************************
 
 ## User Stories:
-* As a user I want to find a trip route near my location so that I can use enjoy a great local route.
+* As a user I want to upload a profile photo
+As a user I want to find a trip route near my location so that I can use enjoy a great local route.
 * As a user I want to be able to provide comments on the routes I use.
 * As a user I want to contribute to the available routes on this site.
 * As a user I want to preview a route.
@@ -47,6 +50,8 @@ Our app utilizes Google Maps API technology to access both the user's location a
 * Wireframe of the site.
 * Styling of the site page(s).
 * Create Session Registration and Login associating user to DB contributions. (DB models (routes&comments - Users/pw))
+* Add image, type: string, to user schema
+* profile photos in code will be (input type = url)
 
 
 ***************************************************************
