@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/mayagold/routemapp#readme",
   "dependencies": {
+    "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
+    "ejs": "^2.5.7",
     "express": "^4.15.4",
+    "express-session": "^1.15.5",
     "mongoose": "^4.11.7"
   }
 }
