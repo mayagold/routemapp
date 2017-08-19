@@ -6,18 +6,40 @@ const express     = require('express');
 const app         = express();
 const bodyParser  = require('body-parser');
 const mongoose    = require('mongoose');
+const session        = require('express-session');
 const port        = 3000 || process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
+app.use(session({
+          secret: "This is a random secret string",
+          resave: false,
+          saveUninitialized: false
+}));
 
 ////////////////////////////////////////////////
 //    REQUIRE SEED CONTROLLER
 //    (and eventually the route model controller)
 ////////////////////////////////////////////////
-var seedController = require('./controllers/seedController.js');
+const seedController = require('./controllers/seedController.js');
 app.use('/seed', seedController);
+
+////////////////////////////////////////////////
+//    REQUIRE SEESSION CONTROLLER
+//    (and eventually the route model controller)
+////////////////////////////////////////////////
+const sessionController = require('./controllers/session.js');
+app.use('/session', sessionController);
+
+
+////////////////////////////////////////////////
+//    REQUIRE SESSION CONTROLLER
+//    (and eventually the route model controller)
+////////////////////////////////////////////////
+const sessionsController = require('./controllers/session.js');
+app.use('/sessions', sessionsController);
+
 
 ////////////////////////////////////////////////
 //    HELLO WORLD
