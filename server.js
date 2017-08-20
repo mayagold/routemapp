@@ -26,6 +26,10 @@ const seedController = require('./controllers/seedController.js');
 app.use('/seed', seedController);
 
 ////////////////////////////////////////////////
+//    REQUIRE ROUTE CONTROLLER
+////////////////////////////////////////////////
+var routeController = require('./controllers/routeController.js');
+app.use('/routes', routeController);
 //    REQUIRE SEESSION CONTROLLER
 //    (and eventually the route model controller)
 ////////////////////////////////////////////////
