@@ -24,7 +24,7 @@
         {{description.comments | limitTo: limit}}
         <button ng-click="limit = description.comments.length" type="button" class="btn-sm btn-success">See More</button>
         <br>
-        <button ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete</button>
+        <button ng-click="ctrl.deleteRoute(description);" type="button" class="btn-sm btn-danger">Delete</button>
 
       </li>
     </ul>

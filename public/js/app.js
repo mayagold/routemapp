@@ -16,8 +16,8 @@ this.getRoutes = function(){
       url: '/routes'
     }).then(
       function(response){
-        // console.log(controller);
-        // console.log('--------------', response.data, '--------------');
+        console.log(controller);
+        console.log('--------------', response.data, '--------------');
         controller.routes = response.data
       },
       function(error){
@@ -44,7 +44,7 @@ this.createRoute = function(){
       }
     );
 }
-this.editRoute = function(route){
+this.editRoute = function(routes){
   $http({
     method: 'PUT',
     url: '/routes/' + routes._id,
@@ -62,7 +62,8 @@ this.editRoute = function(route){
     }
   );
 }
-this.deleteRoute = function(route){
+this.deleteRoute = function(routes){
+  console.log(routes);
   $http({
     method: 'DELETE',
     url: '/routes/' + routes._id
