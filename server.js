@@ -7,13 +7,15 @@ const app         = express();
 const bodyParser  = require('body-parser');
 const mongoose    = require('mongoose');
 const session        = require('express-session');
-const port        = 3000 || process.env.PORT;
+require('dotenv').config()
+
+const port = process.env.PORT;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 app.use(session({
-          secret: "This is a random secret string",
+          secret: process.env.SECRET,
           resave: false,
           saveUninitialized: false
 }));
