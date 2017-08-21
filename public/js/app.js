@@ -52,6 +52,7 @@ this.editRoute = function(routes){
       gpxFile: this.gpxFile,
       comments: this.comments
       // userData: this.userData  //not sure about this .. if we use, add comma above
+      // req.session.logged = true ...statement
     }
   }).then(
     function(response){

@@ -41,8 +41,6 @@ app.use('/session', sessionController);
 //    REQUIRE SESSION CONTROLLER
 //    (and eventually the route model controller)
 ////////////////////////////////////////////////
-const sessionsController = require('./controllers/session.js');
-app.use('/sessions', sessionsController);
 
 
 ////////////////////////////////////////////////
