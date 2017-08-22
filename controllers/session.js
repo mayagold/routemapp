@@ -9,8 +9,6 @@ const bcrypt  = require('bcrypt');
 // })
 
 
-
-
 // Try to create a post route at the address /login
 // that will accept data from the login form
 router.post('/login', (req, res) => {
@@ -34,7 +32,7 @@ console.log(user);
           // create a message for the user
           req.session.message = 'username or password are incorrect';
           res.redirect('/')
-
+          // send json instead so user doesn't have refreshed page.
 
         }
 
@@ -88,7 +86,7 @@ router.post('/registration', (req, res) => {
             req.session.message  = '';
             req.session.username = user.username;
             req.session.logged   = true;
-            console.log('hit redirect');
+            // console.log('hit redirect');
             res.json(user)
           });
       //  }
