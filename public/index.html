@@ -13,7 +13,7 @@
 
 
   <body ng-controller="routeController as ctrl">
-
+<!-- maybe a pop up modal- shows message if error loggin in -->
     <form ng-submit="ctrl.checkRegister();">
       <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
       <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
@@ -51,7 +51,7 @@
       <br>
       <br>
       <!-- section tag to wrap whole site or whatever we want for login functionality -to show/not show if not logged/registered
-      <section ng-if=ctrl.loggedIn> -->
+      <section ng-if=ctrl.loggedIn();> -->
         <form ng-submit="ctrl.createRoute();">
           <h2>Create Your Own Route</h2>
           <p>enter location coordinates or keyword and hit go</p>
