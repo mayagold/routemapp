@@ -16,42 +16,74 @@ const newRoutes=[
   {
     gpxFile: "../routes/'Burbon Trail'.gpx",
     comments: "Scenic tour to several of the Burbon Distillers.",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
   {
     gpxFile: "../routes/'Dahlonega to Amicalola Falls State Park'.gpx",
     comments: "NE Georgia Scenic route between Dahlonega to Amicalola Falls Stat Park",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
   {
     gpxFile: "../routes/'Hatteras LH - Bodie LH'.gpx",
     comments: "NC Outer Banks route from Bodie Lighthouse to Cape Lookout Lighthouse",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
   {
     gpxFile: "../routes/'Helen Loop'.gpx",
     comments: "Scenic tour from wester NC to NE Georgia with the bonus of a visit of the Baverian themed town of Helen GA.",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
   {
     gpxFile: "../routes/'Homestaed to KeyWest'.gpx",
     comments: "South Florida tour between Homestaed and Key West.",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
   {
     gpxFile: "../routes/NorthCarolinaTransportation.gpx",
     comments: "Scenic route across NC piedmont and with way points set for visiting the 'Big Chair' in Thomasville, NC -- Daniel Boones Cave in Churchland, NC and NC  Transportation Museum in Spencer, NC.",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
   {
     gpxFile: "../routes/'Pioneer Village to Casino Queen RV'.gpx",
     comments: "Route between the Pioneer Village in Minden, NE and the Gateway to the West in St. Louis, MO. ",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
   {
     gpxFile: "../routes/Spearfish.gpx",
     comments: "Scenic route touring Spearfish Canyon and Custer SD.  A ride through the Northern Black Hills with vistas and views all along the way.",
-    userData: ["seedRun"]
+    userData: {
+      username: "seedRun",
+      password: "password",
+      Img: "Image"
+    }
   },
 ];
 
