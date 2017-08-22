@@ -15,8 +15,8 @@ this.checkRegister = function(username, password){
       method: 'POST',
       url: '/session/registration',
       data: {
-        username: username,
-        password: password
+        username: this.registeredUsername,
+        password: this.registeredPassword
       }
     }).then(
       function(response){
@@ -49,7 +49,7 @@ this.checkAuth = function(username, password){
       }
     );
 }
- this.checkAuth('test', 'Samantha9');
+ // this.checkAuth();
 
 this.getRoutes = function(){
     $http({

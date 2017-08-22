@@ -15,8 +15,8 @@
   <body ng-controller="routeController as ctrl">
 
     <form ng-submit="ctrl.checkRegister();">
-      <input type="text" placeholder="username" ngControl="username">
-      <input type="password" placeholder="password" ng-model="password">
+      <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
+      <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
       <button type="submit">Submit</button>
     </form>
     {{ctrl.username}}
