@@ -9,6 +9,13 @@ app.controller('routeController', ['$http', function($http){
   const controller = this;
   this.test = 'Motorcycle Route App: This is the index page and Angular is working'
   this.routes = "";
+  // this.loggedIn = false;
+  // if no req.body aka no user logged or registered
+
+  // this.login = function(){
+  //   this.loggedIn = !this.loggedIn OR true;
+  // }
+  // this will be the function to hide stuff on page if not logged in -- if we go that route need ng-if in a section
 
 this.checkRegister = function(username, password){
     $http({
@@ -21,7 +28,11 @@ this.checkRegister = function(username, password){
     }).then(
       function(response){
         console.log(response);
-        // controller.User.create();
+        // controller.login();
+        // // this calls the logged in ng-if to show the data we want IF REGISTERED
+        // controller.username = '',
+        // controller.password = ''
+        // // resets forms to blank
       },
       function(error){
 
@@ -36,13 +47,18 @@ this.checkAuth = function(username, password){
       method: 'POST',
       url: '/session/login',
       data: {
-        username: username,
-        password: password
+        username: this.loggedUsername,
+        password: this.loggedPassword
       }
     }).then(
       function(response){
         // console.log('---------- this is the login route response', response, '----------');
         controller.username = response.data
+        // controller.login();
+        // this calls the logged in ng-if to show the data we want IF REGISTERED
+        // controller.username = '',
+        // controller.password = ''
+        // resets forms to blank
       },
       function(error){
         console.log(error);

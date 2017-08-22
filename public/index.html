@@ -17,10 +17,19 @@
     <form ng-submit="ctrl.checkRegister();">
       <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
       <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
-      <button type="submit">Submit</button>
+      <button type="submit">Register</button>
     </form>
     {{ctrl.username}}
       <!-- this shows the username -->
+
+      <form ng-submit="ctrl.checkAuth();">
+        <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
+        <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
+        <button type="submit">Log In</button>
+      </form>
+      {{ctrl.loggedUsername}}
+      <!-- this shows the username -->
+
   <div class="jumbotron">
     <div class="container">
       <h1>R O U T E F I N D E R</h1>
@@ -41,16 +50,19 @@
     <div class="container-fluid">
       <br>
       <br>
-      <form ng-submit="ctrl.createRoute();">
-        <h2>Create Your Own Route</h2>
-        <p>enter location coordinates or keyword and hit go</p>
-        {{ctrl.gpxFile}}
-        {{ctrl.comments}}
-        {{ctrl.userData}}
-        <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
-        <input type="text" ng-model="ctrl.comments" placeholder="comments">
-        <input class="btn-sm btn-success" type="submit" value="Go">
-      </form>
+      <!-- section tag to wrap whole site or whatever we want for login functionality -to show/not show if not logged/registered
+      <section ng-if=ctrl.loggedIn> -->
+        <form ng-submit="ctrl.createRoute();">
+          <h2>Create Your Own Route</h2>
+          <p>enter location coordinates or keyword and hit go</p>
+          {{ctrl.gpxFile}}
+          {{ctrl.comments}}
+          {{ctrl.userData}}
+          <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
+          <input type="text" ng-model="ctrl.comments" placeholder="comments">
+          <input class="btn-sm btn-success" type="submit" value="Go">
+        </form>
+      <!-- </section> -->
     </div>
   </body>
 
