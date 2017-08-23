@@ -88,6 +88,8 @@ const newRoutes=[
 ];
 
 router.get('/', ( req, res) => {
+
+  console.log("Hello from seed")
 	Routes.create(newRoutes, function(err) {
 		if (err) {
 			console.log(err);

@@ -73,7 +73,7 @@ this.getRoutes = function(){
       method: 'GET',
       url: '/routes'
     }).then(
-      function(response){
+        function(response){
         console.log(controller);
         // console.log('--------------', response.data, '--------------');
         controller.routes = response.data

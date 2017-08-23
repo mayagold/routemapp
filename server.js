@@ -15,7 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static('public'));
 app.use(session({
-          secret: process.env.SECRET,
+          secret: process.env.SECRET || "Motorcycle Routes",
           resave: false,
           saveUninitialized: false
 }));
