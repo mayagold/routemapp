@@ -1,7 +1,7 @@
 body {
   background: lightgrey;
   font-family: "Open Sans", sans-serif;
-  padding: 20px;
+  padding: 30px;
   color: black;
 }
 
@@ -98,6 +98,7 @@ a:hover {
   margin: 0% 2.5%;
   display: block;
   float: left;
+  text-align: center;
 }
 
 footer {
