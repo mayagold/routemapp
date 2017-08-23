@@ -62,13 +62,13 @@ router.post('/registration', (req, res) => {
    // if the user exists use the bcrypt compare passwords
 
      if(user){
-       req.session.message = 'username must be unique that username exists';
-       res.redirect('/session/register');
-     } else if
-      (req.body.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/) === null) {
-        req.session.message = 'password not 8 characters and at lest 1 Upper and at lest 1 lower 1 and non-alphanumerics';
-        res.redirect('/session/register');
-     } else {
+    //    req.session.message = 'username must be unique that username exists';
+    //    res.redirect('/session/register');
+    //  } else if
+    //   (req.body.password.match(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/) === null) {
+    //     req.session.message = 'password not 8 characters and at lest 1 Upper and at lest 1 lower 1 and non-alphanumerics';
+    //     res.redirect('/session/register');
+    //  } else {
          // hash the password
           const password = req.body.password;
           const passwordHash = bcrypt.hashSync(password, bcrypt.genSaltSync(10));

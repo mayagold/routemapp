@@ -16,8 +16,8 @@ this.getRoutes = function(){
       url: '/routes'
     }).then(
       function(response){
-        console.log(controller);
-        console.log('--------------', response.data, '--------------');
+        // console.log(controller);
+        // console.log('--------------', response.data, '--------------');
         controller.routes = response.data
       },
       function(error){
