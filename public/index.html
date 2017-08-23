@@ -53,11 +53,8 @@
         </p>
       </div>
     <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
-      <li ng-click="ctrl.showRoute(route)">
-          {{route.description | limitTo: limit}}
-          <button ng-click="limit=route.description.length" type="button" class="btn-sm">...see more
-          </button>
-
+      <li ng-click="ctrl.showRoute(route); limit=route.description.length">
+          <h4>{{route.description | limitTo: limit}}...</h4>
           <button ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
           </button>
           <button ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
@@ -88,7 +85,9 @@
       <!-- </section> -->
     </div>
 
-    <footer>WDIr-Gizmo | 2017</footer>
+    <footer>
+      <h6>Created by Maya Goldstein, Samantha Ramos, and Lin Lassiter for GA WDIr-Gizmo. Copyright 2017 all rights reserved.</h6>
+    </footer>
 
     </script>
     <script type="text/javascript" src="./js/maps.js"></script>
