@@ -17,17 +17,18 @@ router.post('/login', (req, res) => {
         req.session.username = req.body.username;
         req.session.logged = true;
         console.log(req.session.username, '------------------------ req.session.username');
-      } else {
+        res.json(req.session.logged);
+      // } else {
         //   // create a message for the user
         //   req.session.message = 'username or password are incorrect';
         //   res.redirect('/')
         //   // send json instead so user doesn't have refreshed page.
         //
         //
-      }
+        }
     } else {
         req.session.message = 'username or password are incorrect';
-        res.redirect('/');
+        res.json(req.session.message);
         // this will cause a refresh, alternative is to res.send json with logic message
       }
     })
@@ -68,7 +69,7 @@ router.post('/registration', (req, res) => {
             req.session.message  = '';
             req.session.username = user.username;
             req.session.logged   = true;
-            // console.log('hit redirect');
+            console.log('hit redirect');
             res.json(user)
           });
       //  }
