@@ -111,7 +111,6 @@ app.controller('routeController', ['$http', function($http){
   }
 
 
-
   // works but not user specific
   this.deleteRoute = function(routes) {
       $http({
@@ -126,7 +125,7 @@ app.controller('routeController', ['$http', function($http){
       );
   }
 
-  // WORKS
+  // WORKS but not user specific 
   this.editRoute = function(route){
     console.log('working');
     $http({
@@ -148,12 +147,7 @@ app.controller('routeController', ['$http', function($http){
   }
 
 
-
   this.getRoutes();
-
-
-
-
 
 // end of controller
 }]);
