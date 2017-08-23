@@ -3,43 +3,50 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans|Open+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/app.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/app.css"> -->
     <title></title>
   </head>
 
-
   <body ng-controller="routeController as ctrl">
 <!-- maybe a pop up modal- shows message if error loggin in -->
+
+<nav>
+  <div id="register">
+    <h2>Register to join our community.</h2>
     <form ng-submit="ctrl.checkRegister();">
       <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
       <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
       <button type="submit">Register</button>
     </form>
-    {{ctrl.username}}
-      <!-- this shows the username -->
-
-      <form ng-submit="ctrl.checkAuth();">
-        <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
-        <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
-        <button type="submit">Log In</button>
-      </form>
-      {{ctrl.loggedUsername}}
-      <!-- this shows the username -->
+  </div>
+    <!-- this shows the username -->
+  {{ctrl.username}}
+  <div id="login">
+    <form ng-submit="ctrl.checkAuth();">
+      <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
+      <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
+      <button type="submit">Log In</button>
+    </form>
+    <!-- this shows the username -->
+    {{ctrl.loggedUsername}}
+  </div>
+</nav>
 
   <div class="jumbotron">
-    <div class="container">
-      <h1>R O U T E F I N D E R</h1>
-    </div>
+      <h1>ROUTEFINDER</h1>
   </div>
-  <div class="container-fluid">
-    <ul ng-repeat="description in ctrl.routes" ng-init="limit = 15">
+
+  <div class="container">
+    <h2>Find the best trip routes near you.</h2>
+    <ul ng-repeat="description in ctrl.routes" ng-init="limit = 28">
       <li>
         {{description.comments | limitTo: limit}}
-        <button ng-click="limit = description.comments.length" type="button" class="btn-sm btn-success">See More</button>
+        <button ng-click="limit = description.comments.length" type="button" class="btn-sm">...see more</button>
         <br>
         <button ng-click="ctrl.deleteRoute(description);" type="button" class="btn-sm btn-danger">Delete</button>
           <button ng-click="ctrl.editRoute(description);" type="button" class="btn-sm btn-danger">Edit</button>
@@ -47,6 +54,11 @@
       </li>
     </ul>
   </div>
+
+  <div class="container">
+    Maps Div
+  </div>
+
     <div class="container-fluid">
       <br>
       <br>
@@ -64,6 +76,8 @@
         </form>
       <!-- </section> -->
     </div>
+
+    <footer>Footer content goes here</footer>
   </body>
 
 
