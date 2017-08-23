@@ -69,8 +69,9 @@
           <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true" ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
           </button>
           <form class="form-style" ng-if="$index===ctrl.editFormToShow">
-            <label>
-              <input type="text" ng-model="ctrl.description" placeholder = "description"/></label><input type="submit" value="update" ng-click="ctrl.editRoute(route);">
+            <label><input type="text" ng-model="ctrl.description" placeholder = "description"/></label>
+            <label><input type="text" ng-model="ctrl.details" placeholder = "detailed description"/></label>
+            <input type="submit" value="update" ng-click="ctrl.editRoute(route);">
           </form>
           </br>
 
