@@ -15,7 +15,7 @@ const Routes = require('../models/routes.js');
 const newRoutes=[
   {
     gpxFile: "/routes/BurbonTrail.gpx",
-    description: "Scenic tour to several of the Burbon Distillers.",
+    description: "Scenic tour to several of the Bourbon Distillers along the Kentucky Bourbon Trail.",
     userData: {
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
