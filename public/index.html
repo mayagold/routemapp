@@ -52,13 +52,13 @@
   <h2>Find the best road trip, anywhere.</h2>
   <div class="container">
       <div class="searchbox">
-          <h5>Search by keyword (ex: "bourbon"):
+          <h4>Search by keyword (ex: "bourbon"):
           <input class="box" type="text" ng-model="searchBox">
-        </h5>
+        </h4>
       </div>
     <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
       <li ng-click="ctrl.showRoute(route); limit=route.description.length">
-          <h4>{{route.description | limitTo: limit}}...</h4>
+          <h4>{{route.description | limitTo: limit}}<a>...</a></h4>
           {{route.comments.author}} {{route.comments.comment}}
           <button  ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
           </button>
