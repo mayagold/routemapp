@@ -44,6 +44,7 @@ app.controller('routeController', ['$http', function($http){
       );
 
   }
+
   this.checkAuth = function(){
     console.log('top of login');
       $http({

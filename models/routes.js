@@ -6,7 +6,6 @@ const routeSchema = mongoose.Schema({
     gpxFile: String,
     description: String,
     userData: [Users.schema],
-    comments: [Comments.schema]
 });
 
 const Routes = mongoose.model('Route', routeSchema);

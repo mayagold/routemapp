@@ -20,15 +20,17 @@
   <!-- body content -->
   <body ng-controller="routeController as ctrl">
 
-    <nav>
-      <div id="register">
-        <h2>Register to join our community.</h2>
-        <form ng-submit="ctrl.checkRegister(username, password);">
-          <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
-          <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
-          <button type="submit">Register</button>
-        </form>
-      </div>
+  <header>
+    <div class="overlay">
+      <nav>
+        <div id="register">
+          <h2>Register to join our community.</h2>
+          <form ng-submit="ctrl.checkRegister(username, password);">
+            <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
+            <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
+            <button type="submit">Register</button>
+          </form>
+        </div>
         {{ctrl.registeredUsername}}
         <!-- this shows the username -->
       <div id="login">
@@ -40,20 +42,19 @@
         <!-- {{ctrl.loggedUsername}} -->
       <!-- this shows the username -->
       </div>
-    </nav>
+    </div>
+  </header>
 
-  <div class="jumbotron">
-      <h1>RouteFinder</h1>
-  </div>
+  <h2>Find the best road trip, anywhere.</h2>
   <div class="container">
-    <h2>Find the best trip routes near you.</h2>
       <div class="searchbox">
-          <p>Search by keyword (ex: "bourbon"):
+          <h4>Search by keyword (ex: "bourbon"):
           <input class="box" type="text" ng-model="searchBox">
-        </p>
+        </h4>
       </div>
     <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
       <li ng-click="ctrl.showRoute(route); limit=route.description.length">
+
           <h4>{{route.description | limitTo: limit}}...</h4>
 
             <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true"  ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
@@ -79,7 +80,7 @@
 
     <div class="container-fluid">
       <form ng-submit="ctrl.createRoute();">
-        <h2>Create Your Own Route</h2>
+        <h2>Don't see a route you love? Add to our database.</h2>
         <p>enter location coordinates or keyword and hit go</p>
         <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
         <input type="text" ng-model="ctrl.description" placeholder="description"/>
