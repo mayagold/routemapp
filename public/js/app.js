@@ -125,7 +125,7 @@ app.controller('routeController', ['$http', function($http){
       );
   }
 
-  // WORKS but not user specific 
+  // WORKS but not user specific
   this.editRoute = function(route){
     console.log('working');
     $http({
@@ -145,6 +145,15 @@ app.controller('routeController', ['$http', function($http){
       }
     );
   }
+}
+this.getRoutes();
+
+this.showRoute = function (route) {
+  console.log('showRoute', route);
+  console.log('showRoute', route.gpxFile);
+  showMap(route.gpxFile);
+};
+
 
 
   this.getRoutes();
