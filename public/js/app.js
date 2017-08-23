@@ -8,12 +8,14 @@ const app = angular.module("routemapp", []);
 app.controller('routeController', ['$http', function($http){
   const controller = this;
   this.routes = [];
-  // this.loggedIn = false;
+  this.loggedIn = false;
   // if no req.body aka no user logged or registered
 
-  // this.login = function(){
-  //   this.loggedIn = !this.loggedIn OR true;
-  // }
+  this.login = function(){
+    this.loggedIn = true;
+  }
+
+  // !this.loggedIn
   // this will be the function to hide stuff on page if not logged in -- if we go that route need ng-if in a section
 
 
@@ -31,7 +33,7 @@ app.controller('routeController', ['$http', function($http){
         function(response){
           console.log('response ===========', response);
           console.log('!!!!!!!!!!!!!!!!!!!', response.config.data);
-          // controller.login();
+          controller.login();
           // // this calls the logged in ng-if to show the data we want IF REGISTERED
           // controller.username = '',
           // controller.password = ''
@@ -42,7 +44,8 @@ app.controller('routeController', ['$http', function($http){
       );
 
   }
-  this.checkAuth = function(username, password){
+  this.checkAuth = function(){
+    console.log('top of login');
       $http({
         method: 'POST',
         url: '/session/login',
@@ -52,7 +55,8 @@ app.controller('routeController', ['$http', function($http){
         }
       }).then(
         function(response){
-          // console.log('---------- this is the login route response', response, '----------');
+          console.log(controller.loggedUsername);
+          console.log('---------- this is the login route response', response, '----------');
           controller.username = response.data
           // controller.login();
           // this calls the logged in ng-if to show the data we want IF REGISTERED
@@ -119,6 +123,7 @@ app.controller('routeController', ['$http', function($http){
         url: '/routes/' + routes._id,
       }).then(
         function(response){
+          controller.login();
           controller.getRoutes();
         },
         function(error){
@@ -139,6 +144,7 @@ app.controller('routeController', ['$http', function($http){
       function(response){
         route.description = controller.description;
         console.log(route);
+        controller.login();
         controller.getRoutes();
       },
       function(error){
