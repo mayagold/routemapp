@@ -14,7 +14,7 @@ const Routes = require('../models/routes.js');
 ////////////////////////////////////////////////
 const newRoutes=[
   {
-    gpxFile: "/routes/'BurbonTrail'.gpx",
+    gpxFile: "/routes/BurbonTrail.gpx",
     comments: "Scenic tour to several of the Burbon Distillers.",
     userData: {
       username: "seedRun",
@@ -86,7 +86,7 @@ const newRoutes=[
     }
   },
   {
-    gpxFile: "/routes/Waco2Austin.gpx",
+    gpxFile: "/routes/Waco2Austin-TX.gpx",
     comments: "Scenic route touring Texas Hill country between Waco and Austin TX.",
     userData: {
       username: "seedRun",
