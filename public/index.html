@@ -14,15 +14,15 @@
 
   <body ng-controller="routeController as ctrl">
 <!-- maybe a pop up modal- shows message if error loggin in -->
-    <form ng-submit="ctrl.checkRegister();">
+    <form ng-submit="ctrl.checkRegister(username, password);">
       <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
       <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
       <button type="submit">Register</button>
     </form>
-    {{ctrl.username}}
+    {{ctrl.registeredUsername}}
       <!-- this shows the username -->
 
-      <form ng-submit="ctrl.checkAuth();">
+      <form ng-submit="ctrl.checkAuth(username, password);">
         <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
         <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
         <button type="submit">Log In</button>
@@ -46,6 +46,9 @@
           <input type="text" ng-model="ctrl.updateRoute" placeholder="route description" />
       </li>
     </ul>
+  </div>
+  <div ng-if="ctrl.editMessage" class="editFail">
+    {{ctrl.editMessage}}
   </div>
     <div class="container-fluid">
       <br>
