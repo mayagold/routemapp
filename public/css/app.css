@@ -46,9 +46,12 @@ ul {
   max-width: 90%;
 }
 
+p {
+  font-size: 12px
+}
+
 .container {
   width: 40%;
-  border: 2px solid black;
   float: left;
   margin: 2.5%;
   display: inline;
@@ -68,6 +71,7 @@ font-family: "Encoded Sans", sans-serif;
   display: block;
   float: left;
 
+
 }
 
 html, body, #map_canvas {
@@ -78,4 +82,36 @@ html, body, #map_canvas {
 
 #map {
   height: 50%;
+    border: 2px solid black;
+}
+
+.form-style {
+  margin: 20px auto;
+}
+
+.form-style label{
+    display: block;
+    padding-bottom: 5px;
+    margin: 0;
+
+}
+
+input {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid #C2C2C2;
+    /*box-shadow: 1px 1px 1px black;
+    -moz-box-shadow: 1px 1px 1px black;
+    -webkit-box-shadow: 1px 1px 1px black;*/
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    margin-left: 3px;
+    outline: none;
+}
+
+
+input:hover {
+    background: lightgrey;
 }

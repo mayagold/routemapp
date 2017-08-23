@@ -53,20 +53,20 @@
         </p>
       </div>
     <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
-      <li>
+      <li ng-click="ctrl.showRoute(route)">
           {{route.description | limitTo: limit}}
           <button ng-click="limit=route.description.length" type="button" class="btn-sm">...see more
           </button>
-          <br>
+
           <button ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
           </button>
-          <a href="#" ng-click="ctrl.editFormToShow = $index">Edit this Route</a>
+          <button ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
+          </button>
           <form class="form-style" ng-if="$index===ctrl.editFormToShow">
-            <label><input type="text" ng-model="ctrl.description" placeholder = "description"/></label>
-            <input type="submit" value="update" ng-click="ctrl.editRoute(route);">
+            <label>
+              <input type="text" ng-model="ctrl.description" placeholder = "description"/></label><input type="submit" value="update" ng-click="ctrl.editRoute(route);">
           </form>
           </br>
-          <button ng-click="ctrl.showRoute(route)" type="button" class="btn-sm btn-success">Show Route</button>
 
           <!-- {{route.comments}} -->
         </li>
@@ -88,7 +88,7 @@
       <!-- </section> -->
     </div>
 
-    <footer>Footer content goes here</footer>
+    <footer>WDIr-Gizmo | 2017</footer>
 
     </script>
     <script type="text/javascript" src="./js/maps.js"></script>
