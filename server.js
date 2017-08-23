@@ -53,10 +53,10 @@ app.use('/session', sessionController);
 //    MONGO DB
 ////////////////////////////////////////////////
 
-mongoose.connect(process.env.MONGODB_URI ||  'mongodb://localhost:27017/route_app'); 
+mongoose.connect(process.env.MONGODB_URI ||  'mongodb://localhost:27017/route_app');
 mongoose.connection.once('open', function() {
   console.log('connected to mongo');
-  console.log('-----------------------');
+  console.log('-----------------------'); 
 })
 
 ////////////////////////////////////////////////
