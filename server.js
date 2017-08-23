@@ -9,7 +9,7 @@ const mongoose    = require('mongoose');
 const session        = require('express-session');
 require('dotenv').config();
 
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -56,7 +56,7 @@ app.use('/session', sessionController);
 mongoose.connect(process.env.MONGODB_URI ||  'mongodb://localhost:27017/route_app');
 mongoose.connection.once('open', function() {
   console.log('connected to mongo');
-  console.log('-----------------------'); 
+  console.log('-----------------------');
 })
 
 ////////////////////////////////////////////////
