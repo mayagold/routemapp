@@ -47,7 +47,12 @@
   </div>
   <div class="container">
     <h2>Find the best trip routes near you.</h2>
-    <ul ng-repeat="route in ctrl.routes" ng-init="limit = 28">
+      <div class="searchbox">
+          <p>Search by keyword (ex: "bourbon"):
+          <input class="box" type="text" ng-model="searchBox">
+        </p>
+      </div>
+    <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
       <li>
           {{route.description | limitTo: limit}}
           <button ng-click="limit=route.description.length" type="button" class="btn-sm">...see more
@@ -68,8 +73,8 @@
       </ul>
     </div>
 
+
     <div class="container" id="map">
-      Maps div
     </div>
 
     <div class="container-fluid">
