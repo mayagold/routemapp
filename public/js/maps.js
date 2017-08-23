@@ -63,6 +63,8 @@ const showMap = function(gpxFile) {
   	  strokeWeight: 4
   	});
 
+    //clean up previous Polyline
+    // map.clear();
     //add the poly to the map
   	poly.setMap(map);
 
