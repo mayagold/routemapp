@@ -17,6 +17,7 @@ router.post('/login', (req, res) => {
         req.session.username = req.body.username;
         req.session.logged = true;
         console.log(req.session.username, '------------------------ req.session.username');
+        controller.getRoutes();
       } else {
         //   // create a message for the user
         //   req.session.message = 'username or password are incorrect';
@@ -27,7 +28,7 @@ router.post('/login', (req, res) => {
       }
     } else {
         req.session.message = 'username or password are incorrect';
-        res.redirect('/');
+        res.json('/');
         // this will cause a refresh, alternative is to res.send json with logic message
       }
     })
