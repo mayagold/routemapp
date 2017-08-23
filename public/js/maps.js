@@ -1,41 +1,22 @@
-console.log('maps.js')
-
-// var iterations = 0;
-// function check_compat() {
-//     if (iterations === 75) {
-//         alert('Failed to load Google Maps API. Clear your browser cache, open Google Maps then try again.');
-//         return;
-//     }
-//     if (typeof GBrowserIsCompatible === 'undefined') {
-//         // It isn't loaded, schedule the next check.
-//         setTimeout(check_compat, 200);
-//         iterations++;
-//     } else {
-//         if (GBrowserIsCompatible()) {
-//             mapReadyFn();
-//         } else {
-//             alert('Sorry, your browser is not supported.');
-//         }
-//     }
-// }
-
 let map;
+
+//init ans show initial map on div id=map
 window.initMap = function() {
 //    todo: pass this as a param from the controller code
 // const initMap = function() { // to call from controler code
+console.log('location', google.loader.ClientLocation);
+  //let loclat = google.loader.ClientLocation.latitude;
+  //let loclon = google.loader.ClientLocation.longitude;
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 35.7796, lng: -78.6382},
+    // center: {lat: google.loader.ClientLocation.latitude,  lng:google.loader.ClientLocation.longitude}
     zoom: 7
   });
 }
-  // check_compat()
-  // track = {filename: "../../Burbon Trail.gpx", color: "#0000ff", width: 4};
-  // addGPXTrack(map, track, 1, 9, "Start of Tour");
 
-  //    todo: pass this as a param from the controller code
+//show map route on div id=map
 const showMap = function(gpxFile) {
-  // const gpxFile = "http://localhost:3000/routes/DahlonegaAmicalolaFalls.gpx"
-
+  //make ajax call to get / read the gpx file
   $.ajax({
     type: "GET",
     url: "http://localhost:3000" + gpxFile,
@@ -45,30 +26,25 @@ const showMap = function(gpxFile) {
     let minlat, maxlat = 0;
     let minlon, maxlon = 0;
 
+    // get the bounds of the route for display of a map that
+    // encapsulates the route
     $(xml).find("bounds").each(function() {
       maxlat = $(this).attr("maxlat");
       maxlon = $(this).attr("maxlon");
       minlat = $(this).attr("minlat");
       minlon = $(this).attr("minlon");
     });
-    // console.log('minlat', minlat);
-    // console.log('minlon', minlon);
 
     var bounds = new google.maps.LatLngBounds({lat: parseFloat(minlat), lng: parseFloat(minlon)},{lat: parseFloat(maxlat), lng: parseFloat(maxlon)});
 
-  	$(xml).find("gpxx:rpt");
-    // $(this).find("gpxx:rpt")
-    // console.log('this', $(xml).find("gpxx\\:rpt"));
-    // console.log('this', $(xml).find("gpxx" + $.escapeSelector( ":WaypointExtension")));
-    // console.log('this.length', $(this).children);
-    // console.log('rtept',$(this).find("rtept").lenght);
+    // get all the points that make up thr Route
     $(xml).find("gpxx\\:rpt").each(function() {
-      // console.log('gpxx:rpt.length', $(this).length);
   	  var lat = $(this).attr("lat");
-      // console.log('lat',lat);
   	  var lon = $(this).attr("lon");
-      // console.log(lon,'lon');
   	  var latLng = new google.maps.LatLng(lat, lon);
+      //optionally add markers to the routes
+      // this will add a bubble marker to ALL the points
+      // !! not desireable but a way to see how many poits there are
       // var marker = new google.maps.Marker({
       //   position: latLng,
       //   map: map
@@ -77,6 +53,7 @@ const showMap = function(gpxFile) {
   	  bounds.extend(latLng);
   	});
 
+    //create the Polyline (trace the points for the route) onto the map
   	var poly = new google.maps.Polyline({
   	  // use your own style here
   	  path: points,
@@ -86,81 +63,13 @@ const showMap = function(gpxFile) {
   	  strokeWeight: 4
   	});
 
+    //add the poly to the map
   	poly.setMap(map);
 
   	// fit bounds to track
+    // apply the bounds to the map to be displayed
   	map.fitBounds(bounds);
 
     }
   });
 }
-
-// Function to add track data from a GPX file to a map.
-// map: pointer to a GMap2 object
-// track: pointer to a GPXTrack object
-// centerandzoom: optional boolean variable
-// zoomlevel: optional number, 0..19 for supported levels, -1 to auto compute
-//             best-fit zoom level
-// startmsg: optional string to be placed in an info bubble at initial track
-//           point
-// function addGPXTrack(map, track, centerandzoom, zoomlevel, startmsg) {
-//   // if (GBrowserIsCompatible()) {
-//     GDownloadUrl(track.filename, function(data, responseCode) {
-//       if (responseCode == 200) {
-//         var xml = GXml.parse(data);
-//         if (xml) {
-//
-//           if (centerandzoom) {
-//             var bounds = xml.getElementsByTagName("bounds");
-//             if (bounds && bounds.length) {
-// console.log('minLat', bounds[0]);
-// console.log('minLon', bounds[0]);
-//               var gllbounds = new GLatLngBounds(new GLatLng(parseFloat(bounds[0].getAttribute("minlat")),
-//                 parseFloat(bounds[0].getAttribute("minlon"))),
-//                 new GLatLng(parseFloat(bounds[0].getAttribute("maxlat")),
-//                 parseFloat(bounds[0].getAttribute("maxlon"))));
-//               if (zoomlevel && zoomlevel != -1) {
-//                 map.setCenter(gllbounds.getCenter(), zoomlevel);
-//               } else {
-//                 map.setCenter(gllbounds.getCenter(), map.getBoundsZoomLevel(gllbounds));
-//               }
-//             }
-//           }
-//
-//           var trkpts = xml.documentElement.getElementsByTagName("gpxx:rpt");
-//           if (trkpts && trkpts.length) {
-//             var glatlngs = new Array(trkpts.length);
-//             for (var i = 0; i < trkpts.length; i++) {
-//               glatlngs[i] = new GLatLng(parseFloat(trkpts[i].getAttribute("lat")),
-//                                         parseFloat(trkpts[i].getAttribute("lon")));
-//             }
-//
-//             if (track.alpha) {
-//               var polyline = new GPolyline(glatlngs, track.color, track.width, track.alpha);
-//             } else {
-//               var polyline = new GPolyline(glatlngs, track.color, track.width);
-//             }
-//             map.addOverlay(polyline);
-//
-//             if (startmsg && startmsg.length) {
-//               map.openInfoWindow(glatlngs[0], document.createTextNode(startmsg));
-//             }
-//           } else {
-//             alert("GPX file contains no track points.");
-//           }
-//         } else {
-//           alert("Could not load GPX document " + filename);
-//         }
-//       } else if (responseCode == -1) {
-//         alert("Data request timed out.");
-//       } else {
-//         alert("Error loading file \"" + filename + "\"");
-//       }
-//     });
-//   // }
-// }
-
-// map.setCenter(new google.maps.LatLng(35.7796,78.6382))
-//
-
-console.log('finished maps.js')
