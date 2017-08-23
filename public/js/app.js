@@ -81,6 +81,7 @@ app.controller('routeController', ['$http', function($http){
         url: '/routes'
       }).then(
         function(response){
+          console.log(response.data);
           controller.routes = response.data
         },
         function(error){
@@ -145,7 +146,7 @@ app.controller('routeController', ['$http', function($http){
       }
     );
   }
-}
+
 this.getRoutes();
 
 this.showRoute = function (route) {
