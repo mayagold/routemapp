@@ -33,18 +33,14 @@
         </div>
         {{ctrl.registeredUsername}}
         <!-- this shows the username -->
-        <div id="login">
-          <form ng-submit="ctrl.checkAuth(username, password);">
-            <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
-            <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
-            <button type="submit">Log In</button>
-          </form>
-          {{ctrl.loggedUsername}}
-          <!-- this shows the username -->
-        </div>
-      </nav>
-      <div class="jumbotron">
-        <h1>RouteFinder</h1>
+      <div id="login">
+        <form ng-submit="ctrl.checkAuth();">
+          <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
+          <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
+          <button ng-click="req.session.logged=true" type="submit">Log In</button>
+        </form>
+        <!-- {{ctrl.loggedUsername}} -->
+      <!-- this shows the username -->
       </div>
     </div>
   </header>
@@ -58,11 +54,14 @@
       </div>
     <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
       <li ng-click="ctrl.showRoute(route); limit=route.description.length">
-          <h4>{{route.description | limitTo: limit}}<a>...</a></h4>
-          {{route.comments.author}} {{route.comments.comment}}
-          <button  ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
-          </button>
-          <button ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
+
+          <h4>{{route.description | limitTo: limit}}...</h4>
+
+            <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true"  ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
+            </button>
+
+
+          <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true" ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
           </button>
           <form class="form-style" ng-if="$index===ctrl.editFormToShow">
             <label>
