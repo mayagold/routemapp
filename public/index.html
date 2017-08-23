@@ -47,29 +47,31 @@
   </div>
   <div class="container">
     <h2>Find the best trip routes near you.</h2>
-    <ul ng-repeat="route in ctrl.routes" ng-init="limit = 28">
-      <li>
-          {{route.description | limitTo: limit}}
-          <button ng-click="limit=route.description.length" type="button" class="btn-sm">...see more
-          </button>
-          <br>
+      <div class="searchbox">
+          <p>Search by keyword (ex: "bourbon"):
+          <input class="box" type="text" ng-model="searchBox">
+        </p>
+      </div>
+    <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
+      <li ng-click="ctrl.showRoute(route); limit=route.description.length">
+          <h4>{{route.description | limitTo: limit}}...</h4>
           <button ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
           </button>
-          <a href="#" ng-click="ctrl.editFormToShow = $index">Edit this Route</a>
+          <button ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
+          </button>
           <form class="form-style" ng-if="$index===ctrl.editFormToShow">
-            <label><input type="text" ng-model="ctrl.description" placeholder = "description"/></label>
-            <input type="submit" value="update" ng-click="ctrl.editRoute(route);">
+            <label>
+              <input type="text" ng-model="ctrl.description" placeholder = "description"/></label><input type="submit" value="update" ng-click="ctrl.editRoute(route);">
           </form>
           </br>
-          <button ng-click="ctrl.showRoute(route)" type="button" class="btn-sm btn-success">Show Route</button>
 
           <!-- {{route.comments}} -->
         </li>
       </ul>
     </div>
 
+
     <div class="container" id="map">
-      Maps div
     </div>
 
     <div class="container-fluid">
@@ -83,7 +85,9 @@
       <!-- </section> -->
     </div>
 
-    <footer>Footer content goes here</footer>
+    <footer>
+      <h6>Created by Maya Goldstein, Samantha Ramos, and Lin Lassiter for GA WDIr-Gizmo. Copyright 2017 all rights reserved.</h6>
+    </footer>
 
     </script>
     <script type="text/javascript" src="./js/maps.js"></script>
