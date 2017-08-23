@@ -4,52 +4,34 @@ const User    = require('../models/users.js');
 const bcrypt  = require('bcrypt');
 
 
-// router.get('/login', (req, res) => {
-//   res.render('users/login.ejs', {message: req.session.message || ''})
-// })
-
-
 // Try to create a post route at the address /login
 // that will accept data from the login form
 router.post('/login', (req, res) => {
-  console.log('===========================================================================');
 // query the dateabase for the user
- User.findOne({username: req.body.username}, (err, user) => {
-console.log(user);
-  // if the user exists use the bcrypt compare passwords
+  User.findOne({username: req.body.username}, (err, user) => {
+    console.log(user);
+    // if the user exists use the bcrypt compare passwords
     if(user){
-
-        if(bcrypt.compareSync(req.body.password, user.password)){
-
-            req.session.message = '';
-            req.session.username = req.body.username;
-            req.session.logged = true;
-            console.log(req.session);
-            console.log(req.session.username, '------------------------ req.session.username');
-            res.send(req.session.username);
-
-        // } else {
+      if(bcrypt.compareSync(req.body.password, user.password)){
+        req.session.message = '';
+        req.session.username = req.body.username;
+        req.session.logged = true;
+        console.log(req.session.username, '------------------------ req.session.username');
+      } else {
         //   // create a message for the user
         //   req.session.message = 'username or password are incorrect';
         //   res.redirect('/')
         //   // send json instead so user doesn't have refreshed page.
         //
-        // }
-
-
+        //
+      }
     } else {
-
-          req.session.message = 'username or password are incorrect';
-          res.redirect('/')
-          // this will cause a refresh, alternative is to res.send json with logic message
-    }
-
-  }
- })
-
-
+        req.session.message = 'username or password are incorrect';
+        res.redirect('/');
+        // this will cause a refresh, alternative is to res.send json with logic message
+      }
+    })
 })
-
 
 router.post('/registration', (req, res) => {
   console.log('==========================================================');

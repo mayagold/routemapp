@@ -1,73 +1,84 @@
 <!DOCTYPE html>
+
+<!-- Angular  -->
 <html ng-app="routemapp">
+
+  <!-- meta content -->
   <head>
     <meta charset="utf-8">
+    <!-- Links and scripts  -->
     <link rel="stylesheet" href="./css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans|Open+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/app.css">
-    <title></title>
+    <title>RouteFinder</title>
   </head>
 
-
+  <!-- body content -->
   <body ng-controller="routeController as ctrl">
-<!-- maybe a pop up modal- shows message if error loggin in -->
-    <form ng-submit="ctrl.checkRegister(username, password);">
-      <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
-      <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
-      <button type="submit">Register</button>
-    </form>
-    {{ctrl.registeredUsername}}
-      <!-- this shows the username -->
 
-      <form ng-submit="ctrl.checkAuth(username, password);">
-        <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
-        <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
-        <button type="submit">Log In</button>
-      </form>
-      {{ctrl.loggedUsername}}
+    <nav>
+      <div id="register">
+        <h2>Register to join our community.</h2>
+        <form ng-submit="ctrl.checkRegister(username, password);">
+          <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
+          <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
+          <button type="submit">Register</button>
+        </form>
+      </div>
+        {{ctrl.registeredUsername}}
+        <!-- this shows the username -->
+      <div id="login">
+        <form ng-submit="ctrl.checkAuth(username, password);">
+          <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
+          <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
+          <button type="submit">Log In</button>
+        </form>
+        {{ctrl.loggedUsername}}
       <!-- this shows the username -->
+      </div>
+    </nav>
 
   <div class="jumbotron">
-    <div class="container">
-      <h1>R O U T E F I N D E R</h1>
-    </div>
+      <h1>RouteFinder</h1>
   </div>
-  <div class="container-fluid">
-    <ul ng-repeat="description in ctrl.routes" ng-init="limit = 15">
+  <div class="container">
+    <h2>Find the best trip routes near you.</h2>
+    <ul ng-repeat="route in ctrl.routes" ng-init="limit = 28">
       <li>
-        {{description.comments | limitTo: limit}}
-        <button ng-click="limit = description.comments.length" type="button" class="btn-sm btn-success">See More</button>
-        <br>
-        <button ng-click="ctrl.deleteRoute(description);" type="button" class="btn-sm btn-danger">Delete</button>
-          <button ng-click="ctrl.editRoute(description);" type="button" class="btn-sm btn-danger">Edit</button>
-          <input type="text" ng-model="ctrl.updateRoute" placeholder="route description" />
-      </li>
-    </ul>
-  </div>
-  <div ng-if="ctrl.editMessage" class="editFail">
-    {{ctrl.editMessage}}
-  </div>
+          {{route.description | limitTo: limit}}
+          <button ng-click="limit=route.description.length" type="button" class="btn-sm">...see more
+          </button>
+          <br>
+          <button ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
+          </button>
+          <a href="#" ng-click="ctrl.editFormToShow = $index">Edit this Route</a>
+          <form class="form-style" ng-if="$index===ctrl.editFormToShow">
+            <label><input type="text" ng-model="ctrl.description" placeholder = "description"/></label>
+            <input type="submit" value="update" ng-click="ctrl.editRoute(route);">
+          </form>
+          </br>
+          <!-- {{route.comments}} -->
+        </li>
+      </ul>
+    </div>
+
+    <div class="container">
+      Maps div
+    </div>
+
     <div class="container-fluid">
-      <br>
-      <br>
-      <!-- section tag to wrap whole site or whatever we want for login functionality -to show/not show if not logged/registered
-      <section ng-if=ctrl.loggedIn();> -->
-        <form ng-submit="ctrl.createRoute();">
-          <h2>Create Your Own Route</h2>
-          <p>enter location coordinates or keyword and hit go</p>
-          {{ctrl.gpxFile}}
-          {{ctrl.comments}}
-          {{ctrl.userData}}
-          <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
-          <input type="text" ng-model="ctrl.comments" placeholder="comments">
-          <input class="btn-sm btn-success" type="submit" value="Go">
-        </form>
+      <form ng-submit="ctrl.createRoute();">
+        <h2>Create Your Own Route</h2>
+        <p>enter location coordinates or keyword and hit go</p>
+        <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
+        <input type="text" ng-model="ctrl.description" placeholder="description"/>
+        <input class="btn-sm btn-success" type="submit" value="Go"/>
+      </form>
       <!-- </section> -->
     </div>
-  </body>
 
+    <footer>Footer content goes here</footer>
+  </body>
 
 </html>

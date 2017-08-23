@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 const Users = require('./users.js');
+const Comments = require('./comments.js')
 
 const routeSchema = mongoose.Schema({
     gpxFile: String,
-    comments: String,
-    userData: [Users.schema]
+    description: String,
+    userData: [Users.schema],
+    comments: [Comments.schema]
 });
 
 const Routes = mongoose.model('Route', routeSchema);
