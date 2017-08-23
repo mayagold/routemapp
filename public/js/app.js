@@ -43,6 +43,7 @@ app.controller('routeController', ['$http', function($http){
 
   }
   this.checkAuth = function(username, password){
+    console.log(currentUser);
       $http({
         method: 'POST',
         url: '/session/login',
