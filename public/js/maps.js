@@ -21,6 +21,8 @@ console.log('maps.js')
 
 let map;
 window.initMap = function() {
+//    todo: pass this as a param from the controller code
+// const initMap = function() { // to call from controler code
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 35.7796, lng: -78.6382},
     zoom: -1
@@ -28,9 +30,13 @@ window.initMap = function() {
   // check_compat()
   // track = {filename: "../../Burbon Trail.gpx", color: "#0000ff", width: 4};
   // addGPXTrack(map, track, 1, 9, "Start of Tour");
+
+  //    todo: pass this as a param from the controller code
+  const gpxFile = "http://localhost:3000/routes/DahlonegaAmicalolaFalls.gpx"
+
   $.ajax({
     type: "GET",
-    url: "http://localhost:3000/routes/Spearfish.gpx",
+    url: gpxFile,
     dataType: "xml",
     success: function(xml) {
   	var points = [];
