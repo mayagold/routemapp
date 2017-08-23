@@ -25,18 +25,20 @@ window.initMap = function() {
 // const initMap = function() { // to call from controler code
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 35.7796, lng: -78.6382},
-    zoom: -1
+    zoom: 7
   });
+}
   // check_compat()
   // track = {filename: "../../Burbon Trail.gpx", color: "#0000ff", width: 4};
   // addGPXTrack(map, track, 1, 9, "Start of Tour");
 
   //    todo: pass this as a param from the controller code
-  const gpxFile = "http://localhost:3000/routes/DahlonegaAmicalolaFalls.gpx"
+const showMap = function(gpxFile) {
+  // const gpxFile = "http://localhost:3000/routes/DahlonegaAmicalolaFalls.gpx"
 
   $.ajax({
     type: "GET",
-    url: gpxFile,
+    url: "http://localhost:3000" + gpxFile,
     dataType: "xml",
     success: function(xml) {
   	var points = [];
@@ -49,8 +51,8 @@ window.initMap = function() {
       minlat = $(this).attr("minlat");
       minlon = $(this).attr("minlon");
     });
-    console.log('minlat', minlat);
-    console.log('minlon', minlon);
+    // console.log('minlat', minlat);
+    // console.log('minlon', minlon);
 
     var bounds = new google.maps.LatLngBounds({lat: parseFloat(minlat), lng: parseFloat(minlon)},{lat: parseFloat(maxlat), lng: parseFloat(maxlon)});
 
@@ -61,11 +63,11 @@ window.initMap = function() {
     // console.log('this.length', $(this).children);
     // console.log('rtept',$(this).find("rtept").lenght);
     $(xml).find("gpxx\\:rpt").each(function() {
-      console.log('gpxx:rpt.length', $(this).length);
+      // console.log('gpxx:rpt.length', $(this).length);
   	  var lat = $(this).attr("lat");
-      console.log('lat',lat);
+      // console.log('lat',lat);
   	  var lon = $(this).attr("lon");
-      console.log(lon,'lon');
+      // console.log(lon,'lon');
   	  var latLng = new google.maps.LatLng(lat, lon);
       // var marker = new google.maps.Marker({
       //   position: latLng,

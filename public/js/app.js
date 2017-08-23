@@ -162,6 +162,11 @@ this.deleteRoute = function(routes){
 }
 this.getRoutes();
 
+this.showRoute = function (route) {
+  console.log('showRoute', route);
+  console.log('showRoute', route.gpxFile);
+  showMap(route.gpxFile);
+};
 
 
 
