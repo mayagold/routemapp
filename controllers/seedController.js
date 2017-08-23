@@ -20,7 +20,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/DahlonegaAmicalolaFalls.gpx",
@@ -29,7 +30,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/HatterasBodieLH.gpx",
@@ -38,7 +40,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/HelenGA.gpx",
@@ -47,7 +50,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/Homestaed2KeyWest.gpx",
@@ -56,7 +60,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/NorthCarolinaTransportation.gpx",
@@ -65,7 +70,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/PioneerVillage2Arch.gpx",
@@ -74,7 +80,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/Spearfish.gpx",
@@ -83,7 +90,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/Waco2Austin-TX.gpx",
@@ -92,7 +100,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/Wildlifeloop-Needles-Rushmore-CrazyHorse.gpx",
@@ -101,7 +110,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
   {
     gpxFile: "/routes/WoodsideLk2Rock&RollHallofFame.gpx",
@@ -110,7 +120,8 @@ const newRoutes=[
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
       Img: "Image"
-    }
+    },
+    details: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget tincidunt turpis. Aenean sollicitudin sollicitudin suscipit. Morbi eu convallis libero, et ultricies massa. Nam diam justo, lobortis eget mi non, viverra ultrices justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Integer blandit porta purus, id mattis neque efficitur eget. Maecenas non tellus egestas ante interdum interdum nec in ligula. Nulla a ligula efficitur, viverra nibh sit amet, ultrices ipsum. Fusce placerat, ex iaculis fringilla vulputate, risus nulla ultrices eros, ut malesuada lorem neque vitae justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque vitae odio quis orci commodo cursus. Vivamus vehicula diam ac leo elementumbibendum. Integer sollicitudin sagittis fringilla. Suspendisse in purus lorem."
   },
 ];
 

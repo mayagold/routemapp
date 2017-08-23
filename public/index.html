@@ -56,10 +56,12 @@
         </h4>
       </div>
     <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
-      <li ng-click="ctrl.showRoute(route); limit=route.description.length">
+      <li ng-click="ctrl.showRoute(route); ">
 
-          <h4>{{route.description | limitTo: limit}}...</h4>
+          <h4>{{route.description}}</h4>
 
+          <p>{{route.details | limitTo: limit}}</p>
+          <a href="#" ng-click="limit=route.details.length">see more</a>
             <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true"  ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
             </button>
 
