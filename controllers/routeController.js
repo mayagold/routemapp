@@ -1,10 +1,8 @@
 const express = require('express');
 const router = express.Router();
-
-////////////////////////////////////////////////
-//   MODEL SCHEMA
-////////////////////////////////////////////////
 const Routes = require('../models/routes.js');
+const getGeolocation = require('../bin/api.js');
+
 
 /////////////////////////////////////////////////////
 //     INDEX
@@ -25,7 +23,6 @@ router.post('/', (req, res)=>{
     });
 });
 
-
 /////////////////////////////////////////////////////
 //     DELETE
 /////////////////////////////////////////////////////
@@ -43,8 +40,6 @@ router.put('/:id', (req, res)=>{
     res.json(updatedRoute);
   });
 });
-
-
 
 // export router
 module.exports = router;
