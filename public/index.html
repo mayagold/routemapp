@@ -1,17 +1,94 @@
 <!DOCTYPE html>
+
+<!-- Angular  -->
 <html ng-app="routemapp">
+
+  <!-- meta content -->
   <head>
     <meta charset="utf-8">
+    <!-- Links and scripts  -->
+    <meta name="viewport" content="initial-scale=1.0">
     <link rel="stylesheet" href="./css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans|Open+Sans" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://www.google.com/jsapi" language="javascript"></script>
+    <title>RouteFinder</title>
   </head>
 
+  <!-- body content -->
+  <body ng-controller="routeController as ctrl">
 
-  <body ng-controller="testController as test">
-    {{test.test}}
+    <nav>
+      <div id="register">
+        <h2>Register to join our community.</h2>
+        <form ng-submit="ctrl.checkRegister(username, password);">
+          <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
+          <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
+          <button type="submit">Register</button>
+        </form>
+      </div>
+        {{ctrl.registeredUsername}}
+        <!-- this shows the username -->
+      <div id="login">
+        <form ng-submit="ctrl.checkAuth(username, password);">
+          <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
+          <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
+          <button type="submit">Log In</button>
+        </form>
+        {{ctrl.loggedUsername}}
+      <!-- this shows the username -->
+      </div>
+    </nav>
+
+  <div class="jumbotron">
+      <h1>RouteFinder</h1>
+  </div>
+  <div class="container">
+    <h2>Find the best trip routes near you.</h2>
+    <ul ng-repeat="route in ctrl.routes" ng-init="limit = 28">
+      <li>
+          {{route.description | limitTo: limit}}
+          <button ng-click="limit=route.description.length" type="button" class="btn-sm">...see more
+          </button>
+          <br>
+          <button ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
+          </button>
+          <a href="#" ng-click="ctrl.editFormToShow = $index">Edit this Route</a>
+          <form class="form-style" ng-if="$index===ctrl.editFormToShow">
+            <label><input type="text" ng-model="ctrl.description" placeholder = "description"/></label>
+            <input type="submit" value="update" ng-click="ctrl.editRoute(route);">
+          </form>
+          </br>
+          <button ng-click="ctrl.showRoute(route)" type="button" class="btn-sm btn-success">Show Route</button>
+
+          <!-- {{route.comments}} -->
+        </li>
+      </ul>
+    </div>
+
+    <div class="container" id="map">
+      Maps div
+    </div>
+
+    <div class="container-fluid">
+      <form ng-submit="ctrl.createRoute();">
+        <h2>Create Your Own Route</h2>
+        <p>enter location coordinates or keyword and hit go</p>
+        <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
+        <input type="text" ng-model="ctrl.description" placeholder="description"/>
+        <input class="btn-sm btn-success" type="submit" value="Go"/>
+      </form>
+      <!-- </section> -->
+    </div>
+
+    <footer>Footer content goes here</footer>
+
+    </script>
+    <script type="text/javascript" src="./js/maps.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCltdG3SEWV91mF7C0L8hIU6hi5SOJKB8&callback=initMap"></script>
+  <!-- </script> -->
   </body>
-
 
 </html>

@@ -1,3 +1,81 @@
 body {
-  background: lightgrey;
+  background: whitesmoke;
+  font-family: "Open Sans", sans-serif;
+  padding: 20px
+}
+
+nav {
+  text-align: right;
+}
+
+#register {
+  display: none
+}
+
+.jumbotron {
+  text-align: center;
+  font-family: "Encoded Sans", sans-serif;
+  font-size: 40px;
+  text-transform: lowercase;
+  margin: 40px
+}
+
+.jumbotron h1, h6 {
+  margin: 0 auto
+}
+
+.btn-sm {
+  border: none;
+  background-color: whitesmoke;
+}
+
+.btn-danger {
+  font-weight: bold;
+  font-size: 12px;
+}
+
+li {
+  font-family: "Encoded Sans", sans-serif;
+  text-decoration: none;
+  display: inline-block;
+  color: #195324;
+}
+
+ul {
+  padding-left: 0;
+  max-width: 90%;
+}
+
+.container {
+  width: 40%;
+  border: 2px solid black;
+  float: left;
+  margin: 2.5%;
+  display: inline;
+}
+
+.container-fluid {
+  width: 90%;
+  margin: 0% 2.5%;
+  display: block;
+  float: left;
+}
+
+footer {
+  width: 120%;
+  margin: 5% 2.5%;
+font-family: "Encoded Sans", sans-serif;
+  display: block;
+  float: left;
+
+}
+
+html, body, #map_canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+#map {
+  height: 100%;
 }
