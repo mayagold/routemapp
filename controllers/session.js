@@ -28,13 +28,13 @@ console.log(user);
             console.log(req.session.username, '------------------------ req.session.username');
             res.send(req.session.username);
 
-        } else {
-          // create a message for the user
-          req.session.message = 'username or password are incorrect';
-          res.redirect('/')
-          // send json instead so user doesn't have refreshed page.
-
-        }
+        // } else {
+        //   // create a message for the user
+        //   req.session.message = 'username or password are incorrect';
+        //   res.redirect('/')
+        //   // send json instead so user doesn't have refreshed page.
+        //
+        // }
 
 
     } else {
@@ -44,7 +44,7 @@ console.log(user);
           // this will cause a refresh, alternative is to res.send json with logic message
     }
 
-
+  }
  })
 
 
@@ -80,7 +80,7 @@ router.post('/registration', (req, res) => {
           console.log('--------------------', 'this is before db create');
           console.log(userDbEntry);
           User.create(userDbEntry, (err, user) => {
-            console.log(user);
+            console.log('----------this is the user----------', user);
 
             // set up session
             req.session.message  = '';
@@ -92,9 +92,6 @@ router.post('/registration', (req, res) => {
       //  }
   // });
 });
-
-
-
 
 
 

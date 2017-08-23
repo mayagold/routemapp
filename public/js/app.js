@@ -27,7 +27,8 @@ this.checkRegister = function(username, password){
       }
     }).then(
       function(response){
-        console.log(response);
+        console.log('response ===========', response);
+        console.log('!!!!!!!!!!!!!!!!!!!', response.config.data);
         // controller.login();
         // // this calls the logged in ng-if to show the data we want IF REGISTERED
         // controller.username = '',
@@ -89,12 +90,15 @@ this.createRoute = function(){
       data: {
         gpxFile: this.gpxFile,
         comments: this.comments,
-        userData: this.userData
+        userData: this.loggedUsername
       }
     }).then(
       function(response){
+        console.log('-------this is data-----', response);
+        console.log(routes);
         controller.getRoutes();
         //this is what will make it show on page w/o refresh
+
       },
       function(error){
 
@@ -102,8 +106,12 @@ this.createRoute = function(){
     );
 }
 this.editRoute = function(routes){
-  console.log(this.updateRoute);
-  console.log(req.session);
+  console.log('********* editRoute *******', this.updateRoute);
+  console.log(routes);
+  // console.log(req.session);
+if (routes.userData[0].username === this.loggedUsername) {
+  console.log('****** I am inside the If statement edit route ********');
+  console.log(routes.userData[0].username);
   $http({
     method: 'PUT',
     url: '/routes/' + routes._id,
@@ -115,26 +123,42 @@ this.editRoute = function(routes){
     }
   }).then(
     function(response){
+      console.log('!!!!!!!!!!!!!!!!!!!', response.config.data);
+      routes.comments = controller.updateRoute
+      console.log(routes);
       controller.getRoutes();
     },
     function(error){
 
     }
   );
+  } else {
+    controller.editMessage = 'Sorry, you cannot edit this comment'
+  }
+
 }
 this.deleteRoute = function(routes){
   console.log(routes);
-  $http({
-    method: 'DELETE',
-    url: '/routes/' + routes._id
-  }).then(
-    function(response){
-      controller.getRoutes();
-    },
-    function(error){
+  if (routes.userData[0].username === this.loggedUsername) {
+    $http({
+      method: 'DELETE',
+      url: '/routes/' + routes._id,
+      data: {
+        gpxFile: this.gpxFile,
+        comments: this.updateRoute,
+        userData: this.userData
+      }
+    }).then(
+      function(response){
+        controller.getRoutes();
+      },
+      function(error){
 
-    }
-  );
+      }
+    );
+  } else {
+    controller.editMessage = 'Sorry, you cannot delete this comment'
+  }
 }
 this.getRoutes();
 
