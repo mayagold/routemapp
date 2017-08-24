@@ -9,9 +9,12 @@ body {
 
 header {
   background-image: url('http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg');
-  border-bottom: 10px solid darkslategrey;
+  border-bottom: 1px solid black;
   margin-bottom: 40px;
   width: 100%;
+  box-shadow: 1px 1px 1px black;
+  -moz-box-shadow: 1px 1px 1px black;
+  -webkit-box-shadow: 1px 1px 1px black;
 }
 
 nav {
@@ -26,9 +29,7 @@ nav {
   padding-bottom: 20px
 }
 
-#register {
-  display: none
-}
+
 
 h2 {
   text-align: center;
@@ -37,7 +38,7 @@ h2 {
 }
 
 h4:hover {
-  color: crimson;
+  color: orange;
   margin-top: 0;
 }
 
@@ -53,15 +54,15 @@ h4:hover {
   margin: 0 auto;
   padding-bottom: 60px;
   font-weight: bold;
-  font-size: 100px;
+  font-size: 130px;
   letter-spacing: .1em;
   color: darkslategrey;
-  /*opacity: .8*/
+  opacity: .9
 }
 
 .btn-sm {
   border: none;
-  background-color: whitesmoke;
+  background-color: rgba(255,255,255,.8);
 }
 
 .btn-danger {
@@ -81,7 +82,11 @@ li {
 ul {
   padding-left: 0;
   max-width: 90%;
-  margin: 0
+  margin: 0;
+  BORDER: 2px solid black;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  background: rgba(255,255,255,8)
 }
 
 p {
@@ -101,7 +106,7 @@ a {
 }
 
 a:hover {
-  color: crimson
+  color: orange
 }
 
 .container {
@@ -123,25 +128,23 @@ a:hover {
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
-  background-color: white;
-  border: 2px solid darkslategrey;
+  /*background-color: white;
+  border: 2px solid black;
   box-shadow: 1px 1px 1px black;
   -moz-box-shadow: 1px 1px 1px black;
-  -webkit-box-shadow: 1px 1px 1px black;
+  -webkit-box-shadow: 1px 1px 1px black;*/
 
 
 }
 
 
 footer {
-  /*width: 120%;
-  margin: 5% 2.5%;
+
+/*width: 90%;
 font-family: "Encoded Sans", sans-serif;
   display: block;
-  float: left;
   text-align: center;*/
   display: none
-
 }
 
 html, body, #map_canvas {
@@ -152,7 +155,7 @@ html, body, #map_canvas {
 
 #map {
   height: 50%;
-    border: 2px solid darkslategrey;
+    border: 2px solid black;
     box-shadow: 1px 1px 1px black;
     -moz-box-shadow: 1px 1px 1px black;
     -webkit-box-shadow: 1px 1px 1px black;
@@ -185,7 +188,8 @@ input {
     outline: none;
     padding: 5px;
     font-size: 14px;
-    margin-top: 5px
+    margin-top: 5px;
+    background: rgba(255,255,255,.6)
 }
 
 
@@ -195,7 +199,7 @@ input:hover {
 
 button {
   border-radius: 3px;
-  background-color: white;
+  background-color: rgba(255,255,255,.6);
   font-size: 14px;
   padding: 5px 8px;
 }
@@ -223,6 +227,7 @@ button:hover {
   /* Center the dialog */
   top: 50%;
   left: 50%;
+  text-align: center;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -231,7 +236,7 @@ button:hover {
 }
 .ng-modal-dialog-content {
   padding:10px;
-  text-align: left;
+  text-align: center;
 }
 .ng-modal-close {
   position: absolute;
@@ -243,4 +248,9 @@ button:hover {
   display: inline-block;
   font-weight: bold;
   font-family: 'arial', 'sans-serif';
+}
+
+#register {
+  text-align: center;
+  margin: 0 auto;
 }
