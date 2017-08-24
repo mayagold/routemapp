@@ -51,17 +51,16 @@
   <h2>Find the best road trip, anywhere.</h2>
   <div class="container">
       <div class="searchbox">
-          <h4>Search by keyword (ex: "bourbon"):
+          <h5>Search by keyword (ex: "bourbon"):
           <input class="box" type="text" ng-model="searchBox">
-        </h4>
+        </h5>
       </div>
     <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
       <li ng-click="ctrl.showRoute(route); ">
 
           <h4>{{route.description}}</h4>
 
-          <p>{{route.details | limitTo: limit}}</p>
-          <a href="#" ng-click="limit=route.details.length">see more</a>
+          <p>{{route.details | limitTo: limit}}<a href="#" ng-click="limit=route.details.length">  ...see more</a></p>
             <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true"  ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
             </button>
 
