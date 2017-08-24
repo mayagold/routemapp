@@ -19,7 +19,7 @@ const showMap = function(gpxFile) {
   //make ajax call to get / read the gpx file
   $.ajax({
     type: "GET",
-    url: "http://localhost:3000" + gpxFile,
+    url: gpxFile,
     dataType: "xml",
     success: function(xml) {
   	var points = [];
