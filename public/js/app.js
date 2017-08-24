@@ -149,15 +149,61 @@ app.controller('routeController', ['$http','$scope', function($http, $scope){
 
 this.getRoutes();
 
-$scope.fileNameChanged = function (ele) {
-  var files = ele.files;
-  var l = files.length;
-  var namesArr = [];
+$scope.createUploadDir = function() {
+  $http({
+    method: 'POST',
+    url: '/upload',
+    data: {
+      size: 100000,
+      type: 'text/plain',
+      path: '~/upload/',
+      basename: "WoodsideLk2Rock&RollHallofFame.gpx"
+    }
+  }).then(
+    function(response){
+      // route.description = controller.description;
+      console.log(response);
+      // controller.getRoutes();
+    },
+    function(error){
+      console.log(error);
+    }
+  );
+}
 
-  for (var i = 0; i < l; i++) {
-    namesArr.push(files[i].name);
-  }
-  console.log('namesArr', namesArr)
+$scope.uploadFile = function(file) {
+  $http({
+    method: 'PUT',
+    url: '/upload',
+    data: {
+        size: 100000,
+        type: 'text/plain',
+        path: '~/upload/',
+        basename: file
+      }
+  }).then(
+    function(response){
+      // route.description = controller.description;
+      console.log(response);
+      // controller.getRoutes();
+    },
+    function(error){
+      console.log(error);
+    }
+  );
+}
+
+$scope.fileNameChanged = function (ele) {
+  // const files = ele.files;
+  // var l = files.length;
+  // var namesArr = [];
+  //
+  // for (var i = 0; i < l; i++) {
+  //   namesArr.push(files[i].name);
+  // }
+  console.log('filename', ele.files[0].name)
+  $scope.createUploadDir();
+  // $scope.uploadFile(files[0].name);
 }
 
 this.showRoute = function (route) {
