@@ -1,4 +1,4 @@
-let map;
+let map, poly;
 
 //init ans show initial map on div id=map
 window.initMap = function() {
@@ -16,10 +16,14 @@ console.log('location', google.loader.ClientLocation);
 
 //show map route on div id=map
 const showMap = function(gpxFile) {
+  if (poly) {
+    poly.setMap(null);
+  }
+
   //make ajax call to get / read the gpx file
   $.ajax({
     type: "GET",
-    url: "http://localhost:3000" + gpxFile,
+    url: gpxFile,
     dataType: "xml",
     success: function(xml) {
   	var points = [];
@@ -54,7 +58,7 @@ const showMap = function(gpxFile) {
   	});
 
     //create the Polyline (trace the points for the route) onto the map
-  	var poly = new google.maps.Polyline({
+  	poly = new google.maps.Polyline({
   	  // use your own style here
   	  path: points,
       geodesic: true,

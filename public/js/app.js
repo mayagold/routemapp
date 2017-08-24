@@ -154,15 +154,15 @@ $scope.createUploadDir = function() {
     method: 'POST',
     url: '/upload',
     data: {
-      size: 100000,
-      type: 'text/plain',
-      path: '~/upload/',
-      basename: "WoodsideLk2Rock&RollHallofFame.gpx"
+    //   size: 100000,
+    //   type: 'text/plain',
+       path: '~/upload/',
+       basename: "WoodsideLk2Rock&RollHallofFame.gpx"
     }
   }).then(
     function(response){
       // route.description = controller.description;
-      console.log(response);
+      console.log('createUploadDir', response);
       // controller.getRoutes();
     },
     function(error){
@@ -172,25 +172,42 @@ $scope.createUploadDir = function() {
 }
 
 $scope.uploadFile = function(file) {
-  $http({
-    method: 'PUT',
+  var fd = new FormData();
+  fd.append( 'file', file );
+
+  $.ajax({
     url: '/upload',
-    data: {
-        size: 100000,
-        type: 'text/plain',
-        path: '~/upload/',
-        basename: file
-      }
-  }).then(
-    function(response){
-      // route.description = controller.description;
-      console.log(response);
-      // controller.getRoutes();
-    },
-    function(error){
-      console.log(error);
+    data: fd,
+    processData: false,
+    contentType: 'form-data',
+    type: 'POST',
+    success: function(data){
+      alert(data);
     }
-  );
+  });
+
+  // $http({
+  //   method: 'PUT',
+  //   url: '/upload',
+  //   files: {
+  //     files: file
+  //   },
+  //   data: {
+  //       size: 100000,
+  //       type: 'text/plain',
+  //       path: '~/upload/',
+  //       basename: file
+  //     }
+  // }).then(
+  //   function(response){
+  //     // route.description = controller.description;
+  //     console.log(response);
+  //     // controller.getRoutes();
+  //   },
+  //   function(error){
+  //     console.log(error);
+  //   }
+  // );
 }
 
 $scope.fileNameChanged = function (ele) {
@@ -201,8 +218,10 @@ $scope.fileNameChanged = function (ele) {
   // for (var i = 0; i < l; i++) {
   //   namesArr.push(files[i].name);
   // }
-  console.log('filename', ele.files[0].name)
-  $scope.createUploadDir();
+  ele.files[0].webkitRelativePath = '~/upload';
+  console.log('filename', ele.files[0])
+  console.log('ele', ele)
+  $scope.createUploadDir(ele.files);
   // $scope.uploadFile(files[0].name);
 }
 
