@@ -1,5 +1,5 @@
 body {
-  background: palegoldenrod;
+  background: lightgrey;
   font-family: "Open Sans", sans-serif;
   padding: 30px;
   color: black;
@@ -134,12 +134,13 @@ a:hover {
 
 
 footer {
-  width: 120%;
+  /*width: 120%;
   margin: 5% 2.5%;
 font-family: "Encoded Sans", sans-serif;
   display: block;
   float: left;
-
+  text-align: center;*/
+  display: none
 
 }
 
@@ -189,7 +190,7 @@ input {
 
 
 input:hover {
-    background: lightgrey;
+    background: palegoldenrod;
 }
 
 button {
@@ -200,5 +201,5 @@ button {
 }
 
 button:hover {
-  background: palegreen;
+  background: palegoldenrod;
 }
