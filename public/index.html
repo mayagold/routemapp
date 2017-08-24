@@ -91,7 +91,7 @@
     <div class="container" id="map">
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true">
       <form ng-submit="ctrl.createRoute();">
         <h2>Don't see a route you love? Add to our database.</h2>
         <p>enter location coordinates or keyword and hit go</p>
