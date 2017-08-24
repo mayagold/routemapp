@@ -32,7 +32,7 @@
         {{ctrl.registeredUsername}}
         <!-- this shows the username -->
       <div id="login">
-        <form ng-submit="ctrl.checkAuth(username, password);">
+        <form ng-submit="ctrl.checkAuth();">
           <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
           <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
           <button type="submit">Log In</button>
@@ -78,8 +78,10 @@
       <form ng-submit="ctrl.createRoute();">
         <h2>Create Your Own Route</h2>
         <p>enter location coordinates or keyword and hit go</p>
-        <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
-        <input type="text" ng-model="ctrl.description" placeholder="description"/>
+        <input type="file" multiple onchange="angular.element(this).scope().fileNameChanged(this)">
+
+        <!-- <input type="file" ng-model="ctrl.gpxFile" ng-Change="ctrl.uploadFiles()" placeholder="gpx File"> -->
+        <input type="text" ng-model="ctrl.description" placeholder="description" accept="routes"/>
         <input class="btn-sm btn-success" type="submit" value="Go"/>
       </form>
       <!-- </section> -->

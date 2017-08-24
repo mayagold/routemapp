@@ -5,7 +5,7 @@
 const app = angular.module("routemapp", []);
 
 
-app.controller('routeController', ['$http', function($http){
+app.controller('routeController', ['$http','$scope', function($http, $scope){
   const controller = this;
   this.routes = [];
   // this.loggedIn = false;
@@ -42,7 +42,7 @@ app.controller('routeController', ['$http', function($http){
       );
 
   }
-  this.checkAuth = function(username, password){
+  this.checkAuth = function(){
       $http({
         method: 'POST',
         url: '/session/login',
@@ -52,7 +52,7 @@ app.controller('routeController', ['$http', function($http){
         }
       }).then(
         function(response){
-          // console.log('---------- this is the login route response', response, '----------');
+          console.log('---------- this is the login route response', response, '----------');
           controller.username = response.data
           // controller.login();
           // this calls the logged in ng-if to show the data we want IF REGISTERED
@@ -81,7 +81,7 @@ app.controller('routeController', ['$http', function($http){
         url: '/routes'
       }).then(
         function(response){
-          console.log(response.data);
+          // console.log(response.data);
           controller.routes = response.data
         },
         function(error){
@@ -148,6 +148,17 @@ app.controller('routeController', ['$http', function($http){
   }
 
 this.getRoutes();
+
+$scope.fileNameChanged = function (ele) {
+  var files = ele.files;
+  var l = files.length;
+  var namesArr = [];
+
+  for (var i = 0; i < l; i++) {
+    namesArr.push(files[i].name);
+  }
+  console.log('namesArr', namesArr)
+}
 
 this.showRoute = function (route) {
   console.log('showRoute', route);
