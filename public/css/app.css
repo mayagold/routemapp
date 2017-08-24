@@ -1,16 +1,38 @@
 body {
-  background: whitesmoke;
+  background: white;
   font-family: "Open Sans", sans-serif;
-  padding: 20px
+  padding: 30px;
+  color: black;
+}
+
+header {
+  background-image: url('http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg');
+  border-bottom: 5px solid black;
+  margin-bottom: 40px
 }
 
 nav {
   text-align: right;
+  padding-top: 20px;
 }
 
-/*#register {
+.overlay {
+  background-color: rgba(0,0,0,.3);
+  padding-bottom: 20px
+}
+
+#register {
   display: none
-}*/
+}
+
+h2 {
+  text-align: center;
+  color: black;
+}
+
+h4:hover {
+  color: orange;
+}
 
 .jumbotron {
   text-align: center;
@@ -20,8 +42,14 @@ nav {
   margin: 40px
 }
 
-.jumbotron h1, h6 {
-  margin: 0 auto
+.jumbotron h1 {
+  margin: 0 auto;
+  padding-bottom: 60px;
+  font-weight: bold;
+  font-size: 100px;
+  letter-spacing: .1em;
+  color: black;
+  opacity: .8
 }
 
 .btn-sm {
@@ -38,7 +66,7 @@ li {
   font-family: "Encoded Sans", sans-serif;
   text-decoration: none;
   display: inline-block;
-  color: #195324;
+  color: steelblue;
 }
 
 ul {
@@ -47,7 +75,17 @@ ul {
 }
 
 p {
-  font-size: 12px
+  font-size: 12px;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: orange
 }
 
 .container {
@@ -62,6 +100,11 @@ p {
   margin: 0% 2.5%;
   display: block;
   float: left;
+  text-align: center;
+}
+
+button {
+  padding: 10px
 }
 
 footer {
@@ -82,7 +125,7 @@ html, body, #map_canvas {
 
 #map {
   height: 50%;
-    border: 2px solid black;
+    border: 2px solid darkgrey;
 }
 
 .form-style {
@@ -109,6 +152,7 @@ input {
     -moz-border-radius: 3px;
     margin-left: 3px;
     outline: none;
+    padding: 10px;
 }
 
 

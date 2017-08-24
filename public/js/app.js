@@ -44,6 +44,7 @@ app.controller('routeController', ['$http', function($http){
       );
 
   }
+
   this.checkAuth = function(){
     console.log('top of login');
       $http({
@@ -139,10 +140,12 @@ app.controller('routeController', ['$http', function($http){
       url: '/routes/' + route._id,
       data: {
         description: controller.description,
+        details: controller.details
       }
     }).then(
       function(response){
         route.description = controller.description;
+        route.details = controller.details;
         console.log(route);
         controller.login();
         controller.getRoutes();
