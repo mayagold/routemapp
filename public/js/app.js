@@ -37,6 +37,7 @@ app.controller('routeController', ['$http', '$scope', function($http, $scope){
       );
   }
   this.checkAuth = function(){
+    console.log('top of login');
       $http({
         method: 'POST',
         url: '/session/login',
@@ -46,6 +47,7 @@ app.controller('routeController', ['$http', '$scope', function($http, $scope){
         }
       }).then(
         function(response){
+          console.log(controller.loggedUsername);
           console.log('---------- this is the login route response', response, '----------');
           controller.username = response.data
           // controller.login();
@@ -69,7 +71,7 @@ app.controller('routeController', ['$http', '$scope', function($http, $scope){
         url: '/routes'
       }).then(
         function(response){
-          // console.log(response.data);
+          console.log(response.data);
           controller.routes = response.data
         },
         function(error){

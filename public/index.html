@@ -92,10 +92,8 @@
       <form ng-submit="ctrl.createRoute();">
         <h2>Don't see a route you love? Add to our database.</h2>
         <p>enter location coordinates or keyword and hit go</p>
-        <input type="file" name="upl"  onchange="angular.element(this).scope().fileNameChanged(this)">
-
-        <!-- <input type="file" ng-model="ctrl.gpxFile" ng-Change="ctrl.uploadFiles()" placeholder="gpx File"> -->
-        <input type="text" ng-model="ctrl.description" placeholder="description" accept="routes"/>
+        <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
+        <input type="text" ng-model="ctrl.description" placeholder="description"/>
         <input class="btn-sm btn-success" type="submit" value="Go"/>
       </form>
       <!-- </section> -->
