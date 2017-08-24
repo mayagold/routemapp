@@ -25,7 +25,7 @@ const newRoutes=[
   },
   {
     gpxFile: "/routes/DahlonegaAmicalolaFalls.gpx",
-    description: "NE Georgia Scenic route between Dahlonega to Amicalola Falls Stat Park",
+    description: "NE Georgia Scenic route between Dahlonega to Amicalola Falls State Park",
     userData: {
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
@@ -45,7 +45,7 @@ const newRoutes=[
   },
   {
     gpxFile: "/routes/HelenGA.gpx",
-    description: "Scenic tour from wester NC to NE Georgia with the bonus of a visit of the Baverian themed town of Helen GA.",
+    description: "Scenic tour from western NC to NE Georgia with the bonus of a visit of the Bavarian themed town of Helen GA.",
     userData: {
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
@@ -55,7 +55,7 @@ const newRoutes=[
   },
   {
     gpxFile: "/routes/Homestaed2KeyWest.gpx",
-    description: "South Florida tour between Homestaed and Key West.",
+    description: "South Florida tour between Homested and Key West.",
     userData: {
       username: "seedRun",
       password: "$2a$10$tT8Bl0Fzu2VY1apOadUKW.br8NkDAkfhm6CelvzjTCL8GWUpbHFfC",
