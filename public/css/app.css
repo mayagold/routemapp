@@ -7,7 +7,7 @@ body {
 
 header {
   background-image: url('http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg');
-  border-bottom: 2px solid darkgrey;
+  border-bottom: 5px solid black;
   margin-bottom: 40px
 }
 
@@ -46,8 +46,10 @@ h4:hover {
   margin: 0 auto;
   padding-bottom: 60px;
   font-weight: bold;
+  font-size: 100px;
   letter-spacing: .1em;
-  color: darkgreen;
+  color: black;
+  opacity: .8
 }
 
 .btn-sm {
@@ -101,6 +103,10 @@ a:hover {
   text-align: center;
 }
 
+button {
+  padding: 10px
+}
+
 footer {
   width: 120%;
   margin: 5% 2.5%;
@@ -146,6 +152,7 @@ input {
     -moz-border-radius: 3px;
     margin-left: 3px;
     outline: none;
+    padding: 10px;
 }
 
 
