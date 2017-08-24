@@ -1,20 +1,25 @@
 body {
-  background: white;
+  background: lightgrey;
   font-family: "Open Sans", sans-serif;
   padding: 30px;
   color: black;
+  margin: 0 auto;
+  width: 100vw;
 }
 
 header {
   background-image: url('http://www.mrpsocialstudies.com/uploads/2/6/3/6/26364497/8504630_orig.jpg');
-  border-bottom: 5px solid black;
-  margin-bottom: 40px
+  border-bottom: 10px solid darkslategrey;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 nav {
   text-align: right;
   padding-top: 20px;
+  padding-right: 20px;
 }
+
 
 .overlay {
   background-color: rgba(0,0,0,.3);
@@ -28,10 +33,12 @@ nav {
 h2 {
   text-align: center;
   color: black;
+  font-size: 40px
 }
 
 h4:hover {
-  color: orange;
+  color: crimson;
+  margin-top: 0;
 }
 
 .jumbotron {
@@ -48,8 +55,8 @@ h4:hover {
   font-weight: bold;
   font-size: 100px;
   letter-spacing: .1em;
-  color: black;
-  opacity: .8
+  color: darkslategrey;
+  /*opacity: .8*/
 }
 
 .btn-sm {
@@ -66,26 +73,35 @@ li {
   font-family: "Encoded Sans", sans-serif;
   text-decoration: none;
   display: inline-block;
-  color: steelblue;
+  color: darkslategrey;
+  font-weight: lighter;
+  font-size: 20px;
 }
 
 ul {
   padding-left: 0;
   max-width: 90%;
+  margin: 0
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
   color: black;
+}
+
+h5 {
+  font-size: 16px
 }
 
 a {
   text-decoration: none;
   color: black;
+  font-weight: bold;
+  color: darkslategrey
 }
 
 a:hover {
-  color: orange
+  color: crimson
 }
 
 .container {
@@ -93,27 +109,38 @@ a:hover {
   float: left;
   margin: 2.5%;
   display: inline;
+  padding: 10px;
+
 }
 
 .container-fluid {
-  width: 90%;
-  margin: 0% 2.5%;
-  display: block;
+  width: 40%;
   float: left;
+  margin: 2.5%;
+  display: inline;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
   text-align: center;
+  background-color: white;
+  border: 2px solid darkslategrey;
+  box-shadow: 1px 1px 1px black;
+  -moz-box-shadow: 1px 1px 1px black;
+  -webkit-box-shadow: 1px 1px 1px black;
+
+
 }
 
-button {
-  padding: 10px
-}
 
 footer {
-  width: 120%;
+  /*width: 120%;
   margin: 5% 2.5%;
 font-family: "Encoded Sans", sans-serif;
   display: block;
   float: left;
-
+  text-align: center;*/
+  display: none
 
 }
 
@@ -125,7 +152,11 @@ html, body, #map_canvas {
 
 #map {
   height: 50%;
-    border: 2px solid darkgrey;
+    border: 2px solid darkslategrey;
+    box-shadow: 1px 1px 1px black;
+    -moz-box-shadow: 1px 1px 1px black;
+    -webkit-box-shadow: 1px 1px 1px black;
+    position:sticky;
 }
 
 .form-style {
@@ -144,18 +175,72 @@ input {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     border: 1px solid #C2C2C2;
-    /*box-shadow: 1px 1px 1px black;
+    box-shadow: 1px 1px 1px black;
     -moz-box-shadow: 1px 1px 1px black;
-    -webkit-box-shadow: 1px 1px 1px black;*/
+    -webkit-box-shadow: 1px 1px 1px black;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     margin-left: 3px;
     outline: none;
-    padding: 10px;
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 5px
 }
 
 
 input:hover {
-    background: lightgrey;
+    background: palegoldenrod;
+}
+
+button {
+  border-radius: 3px;
+  background-color: white;
+  font-size: 14px;
+  padding: 5px 8px;
+}
+
+button:hover {
+  background: palegoldenrod;
+}
+
+.ng-modal-overlay {
+  /* A dark translucent div that covers the whole screen */
+  position:absolute;
+  z-index:9999;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:#000000;
+  opacity: 0.8;
+}
+.ng-modal-dialog {
+  /* A centered div above the overlay with a box shadow. */
+  z-index:10000;
+  position: absolute;
+  width: 50%; /* Default */
+  /* Center the dialog */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 4px 4px 80px #000;
+}
+.ng-modal-dialog-content {
+  padding:10px;
+  text-align: left;
+}
+.ng-modal-close {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 120%;
+  display: inline-block;
+  font-weight: bold;
+  font-family: 'arial', 'sans-serif';
 }
