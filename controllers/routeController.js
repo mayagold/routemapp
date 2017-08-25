@@ -3,7 +3,6 @@ const router = express.Router();
 const Routes = require('../models/routes.js');
 const getGeolocation = require('../bin/api.js');
 
-
 /////////////////////////////////////////////////////
 //     INDEX
 /////////////////////////////////////////////////////
