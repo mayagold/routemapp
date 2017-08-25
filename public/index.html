@@ -29,24 +29,27 @@
             <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
             <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
             <button ng-click="req.session.logged=true" type="submit">Log In</button>
+            <button ng-click='toggleModal()'>Join our Community</button>
           </form>
           <!-- {{ctrl.loggedUsername}} -->
         <!-- this shows the username -->
         </div>
-        <button ng-click='toggleModal()'>Join our Community</button>
-    <modal-dialog show='modalShown' width='750px' height='60%'>
-        <h2>Register to join our community.</h2>
-        <form ng-submit="ctrl.checkRegister(username, password);">
-          <input type="text" placeholder="username" ng-model="ctrl.registeredUsername">
-          <input type="password" placeholder="password" ng-model="ctrl.registeredPassword">
-          <button ng-click='toggleModal()' type="submit">Register</button>
-          <br>
-          <br>
-          Your username is: {{ctrl.registeredUsername}}
-          <!-- this shows the username -->
-        </form>
-    </modal-dialog>
+        <div id="register">
+          <modal-dialog show='modalShown' width='750px' height='60%'>
+            <h2>Register to join our community.</h2>
+            <form class="form-style" ng-submit="ctrl.checkRegister(username, password);">
+              <label><input type="text" placeholder="username" ng-model="ctrl.registeredUsername"></label><br/>
+              <label><input type="password" placeholder="password" ng-model="ctrl.registeredPassword"></label><br/>
+              <button ng-click='toggleModal()' type="submit">Register</button>
+              <br/>
+              <br/>
+              Your username is: {{ctrl.registeredUsername}}
+              <!-- this shows the username -->
+            </form>
+          </modal-dialog>
+        </div>
       </nav>
+
       <div class="jumbotron">
         <h1>routefinder</h1>
       </div>
@@ -56,7 +59,7 @@
   <h2>Find the best road trip, anywhere.</h2>
   <div class="container">
       <div class="searchbox">
-          <h5>Search by keyword (ex: "bourbon"):
+          <h5>SEARCH BY KEYWORD <BR/>(ex: "bourbon"):
           <input class="box" type="text" ng-model="searchBox">
         </h5>
       </div>
@@ -88,7 +91,7 @@
     <div class="container" id="map">
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid" ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true">
       <form ng-submit="ctrl.createRoute();">
         <h2>Don't see a route you love? Add to our database.</h2>
         <p>enter location coordinates or keyword and hit go</p>
