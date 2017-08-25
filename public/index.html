@@ -2,7 +2,6 @@
 
 <!-- Angular  -->
 <html ng-app="routemapp">
-
   <!-- meta content -->
   <head>
     <meta charset="utf-8">
@@ -16,101 +15,84 @@
     <script src="https://www.google.com/jsapi" language="javascript"></script>
     <title>RouteFinder</title>
   </head>
-
   <!-- body content -->
   <body ng-controller="routeController as ctrl">
-
-  <header>
-    <div class="overlay">
-      <nav>
-        <!-- this shows the username -->
-        <div id="login">
-          <form ng-submit="ctrl.checkAuth();">
-            <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
-            <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
-            <button ng-click="req.session.logged=true" type="submit">Log In</button>
-            <button ng-click='toggleModal()'>Join our Community</button>
-          </form>
-          <!-- {{ctrl.loggedUsername}} -->
-        <!-- this shows the username -->
-        </div>
-        <div id="register">
-          <modal-dialog show='modalShown' width='750px' height='60%'>
-            <h2>Register to join our community.</h2>
-            <form class="form-style" ng-submit="ctrl.checkRegister(username, password);">
-              <label><input type="text" placeholder="username" ng-model="ctrl.registeredUsername"></label><br/>
-              <label><input type="password" placeholder="password" ng-model="ctrl.registeredPassword"></label><br/>
-              <button ng-click='toggleModal()' type="submit">Register</button>
-              <br/>
-              <br/>
-              Your username is: {{ctrl.registeredUsername}}
-              <!-- this shows the username -->
+    <header>
+      <div class="overlay">
+        <nav>
+          <!-- this shows the username -->
+          <div id="login">
+            <form ng-submit="ctrl.checkAuth();">
+              <input type="text" placeholder="username" ng-model="ctrl.loggedUsername">
+              <input type="password" placeholder="password" ng-model="ctrl.loggedPassword">
+              <button ng-click="req.session.logged=true" type="submit">Log In</button>
+              <button ng-click='toggleModal()'>Join our Community</button>
             </form>
-          </modal-dialog>
+            <!-- {{ctrl.loggedUsername}} -->
+          <!-- this shows the username -->
+          </div>
+          <div id="register">
+            <modal-dialog show='modalShown' width='750px' height='60%'>
+              <h2>Register to join our community.</h2>
+              <form class="form-style" ng-submit="ctrl.checkRegister(username, password);">
+                <label><input type="text" placeholder="username" ng-model="ctrl.registeredUsername"></label><br/>
+                <label><input type="password" placeholder="password" ng-model="ctrl.registeredPassword"></label><br/>
+                <button ng-click='toggleModal()' type="submit">Register</button>
+                <br/>
+                <br/>
+                Your username is: {{ctrl.registeredUsername}}
+                <!-- this shows the username -->
+              </form>
+            </modal-dialog>
+          </div>
+        </nav>
+        <div class="jumbotron">
+          <h1>routefinder</h1>
         </div>
-      </nav>
-
-      <div class="jumbotron">
-        <h1>routefinder</h1>
       </div>
-    </div>
-  </header>
-
-  <h2>Find the best road trip, anywhere.</h2>
-  <div class="container">
-      <div class="searchbox">
-          <h5>SEARCH BY KEYWORD <BR/>(ex: "bourbon"):
-          <input class="box" type="text" ng-model="searchBox">
-        </h5>
-      </div>
-    <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
-      <li ng-click="ctrl.showRoute(route); ">
-
-          <h4>{{route.description}}</h4>
-
-          <p>{{route.details | limitTo: limit}}<a href="#" ng-click="limit=route.details.length">  ...see more</a></p>
+    </header>
+    <h2>Find the best road trip, anywhere.</h2>
+    <div class="container">
+        <div class="searchbox">
+            <h5>SEARCH BY KEYWORD <BR/>(ex: "bourbon"):
+            <input class="box" type="text" ng-model="searchBox">
+          </h5>
+        </div>
+      <ul ng-repeat="route in ctrl.routes  | filter:searchBox" ng-init="limit = 28">
+        <li ng-click="ctrl.showRoute(route); ">
+            <h4>{{route.description}}</h4>
+            <p>{{route.details | limitTo: limit}}<a href="#" ng-click="limit=route.details.length">  ...see more</a></p>
             <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true"  ng-click="ctrl.deleteRoute(route);" type="button" class="btn-sm btn-danger">Delete
             </button>
-
-
-          <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true" ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
-          </button>
-          <form class="form-style" ng-if="$index===ctrl.editFormToShow">
-            <label><input type="text" ng-model="ctrl.description" placeholder = "description"/></label>
-            <label><input type="text" ng-model="ctrl.details" placeholder = "detailed description"/></label>
-            <input type="submit" value="update" ng-click="ctrl.editRoute(route);">
-          </form>
-          </br>
-
-          <!-- {{route.comments}} -->
-        </li>
-      </ul>
-    </div>
-
-
-    <div class="container" id="map">
-    </div>
-
-    <div class="container-fluid" ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true">
-      <form ng-submit="ctrl.createRoute();">
-        <h2>Don't see a route you love? Add to our database.</h2>
-        <p>enter location coordinates or keyword and hit go</p>
-        <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
-        <input type="text" ng-model="ctrl.description" placeholder="description"/>
-        <input class="btn-sm btn-success" type="submit" value="Go"/>
-      </form>
-      <!-- </section> -->
-
-    </div>
-
-    <footer>
-      <h6>Created by Maya Goldstein, Samantha Ramos, and Lin Lassiter for GA WDIr-Gizmo. Copyright 2017 all rights reserved.</h6>
-    </footer>
-
-    </script>
-    <script type="text/javascript" src="./js/maps.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCltdG3SEWV91mF7C0L8hIU6hi5SOJKB8&callback=initMap"></script>
-  <!-- </script> -->
-  </body>
+            <button ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true" ng-click="ctrl.editFormToShow = $index" type="button" class="btn-sm btn-danger">Edit this Route
+            </button>
+            <form class="form-style" ng-if="$index===ctrl.editFormToShow">
+              <label><input type="text" ng-model="ctrl.description" placeholder = "description"/></label>
+              <label><input type="text" ng-model="ctrl.details" placeholder = "detailed description"/></label>
+              <input type="submit" value="update" ng-click="ctrl.editRoute(route);">
+            </form>
+            </br>
+            <!-- {{route.comments}} -->
+          </li>
+        </ul>
+      </div>
+      <div class="container" id="map"></div>
+      <div class="container-fluid" ng-if="ctrl.loggedUsername==='admin' && ctrl.loggedPassword==='admin' && req.session.logged===true">
+        <form ng-submit="ctrl.createRoute();">
+          <h2>Don't see a route you love? Add to our database.</h2>
+          <p>enter location coordinates or keyword and hit go</p>
+          <input type="text" ng-model="ctrl.gpxFile" placeholder="gpx File">
+          <input type="text" ng-model="ctrl.description" placeholder="description"/>
+          <input class="btn-sm btn-success" type="submit" value="Go"/>
+        </form>
+        <!-- </section> -->
+      </div>
+      <footer>
+        <h6>Created by Maya Goldstein, Samantha Ramos, and Lin Lassiter for GA WDIr-Gizmo. Copyright 2017 all rights reserved.</h6>
+      </footer>
+      <script type="text/javascript" src="./js/maps.js"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCltdG3SEWV91mF7C0L8hIU6hi5SOJKB8&callback=initMap"></script>
+    <!-- </script> -->
+    </body>
 
 </html>
