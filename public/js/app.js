@@ -87,7 +87,7 @@ app.controller('routeController', ['$http', '$scope', function($http, $scope){
         data: {
           gpxFile: this.gpxFile,
           description: this.description,
-          userData: this.loggedUsername
+          // userData: this.loggedUsername
         }
       }).then(
         function(response){
