@@ -64,11 +64,11 @@ app.controller('routeController', ['$http', '$scope', function($http, $scope){
         data: {
           gpxFile: this.gpxFile,
           description: this.description,
-          userData: this.loggedUsername
         }
       }).then(
         function(response){
           console.log('-------this is response.config.data-----', response.config.data);
+
         },
         function(error){
         }
