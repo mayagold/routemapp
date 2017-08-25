@@ -34,7 +34,6 @@ As a user I want to find a trip route near my location so that I can use enjoy a
 * Session sign-on (register/login)
 * As an user I want to control adding and deleting my routes/comments.
 
-
 ***************************************************************
 
 ## Work Items:
@@ -49,15 +48,12 @@ As a user I want to find a trip route near my location so that I can use enjoy a
 * Styling of the site page(s).
 * Create Session Registration and Login associating user to DB contributions. (DB models (routes&comments - Users/pw))
 
-
-
 ***************************************************************
 
 ## Problems we encountered (and how we solved them):
 
 * Sessions modeling: figuring out how to do this using Angular JS
 * Uploading .gpx files to the site via file uploader (we found a way around this by using the file path rather than uploading the file)
-
 
 ***************************************************************
 
@@ -73,9 +69,7 @@ As a user I want to find a trip route near my location so that I can use enjoy a
 * Allow users to add comments for trips/routes used.
 * Set ranking 'star' of Routes - Favorites.
 
-
 ***************************************************************
-
 
 ![screen capture](/images/screencapture1.png)
 
